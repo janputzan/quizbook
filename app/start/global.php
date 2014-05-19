@@ -51,10 +51,10 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
-//App::error(function(Symfony\Component\HttpKernel\Exception\NotFoundHttpException $exception)
-//{
-//	return Redirect::to('404');
-//});
+App::error(function(Symfony\Component\HttpKernel\Exception\NotFoundHttpException $exception)
+{
+	return Redirect::to('404');
+});
 
 /*
 |--------------------------------------------------------------------------
