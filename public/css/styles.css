@@ -335,6 +335,18 @@ img.logo-png
 
 */
 
+.form-field input
+{
+	border: solid 1px #414141;
+
+}
+
+.form-field input[type='text']:focus, input[type='password']:focus, input[type='submit']:focus
+{
+	outline: none;
+    
+    box-shadow: 0 0 10px #a1a1a1;
+}
 
 .link-to-terms a
 {
@@ -494,11 +506,15 @@ input[type="submit"]:hover
 	color: #414141;
 }
 
+
+
 /*
 
 	Side-Menu
 
 */
+
+
 
 .side-menu
 {
