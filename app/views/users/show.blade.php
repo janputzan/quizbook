@@ -9,7 +9,7 @@
 
 		<div class='profile-photo'>
 
-			{{ Gravatar::image('jptest_05@planysdigital.com') }}
+			{{ Gravatar::image($user->email) }}
 
 		</div>
 
