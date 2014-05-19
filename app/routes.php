@@ -34,13 +34,17 @@ Route::get('search', 'HomeController@search');
 
 Route::post('search', 'HomeController@searchResult');
 
-Route::get('create', 'CreateQuizController@title');
+
+
+
+
+//Route::get('create', 'CreateQuizController@title');
 
 Route::get('create/title', 'CreateQuizController@title');
 
 Route::post('create/title', 'CreateQuizController@titleStore');
 
-Route::post('create', 'CreateQuizController@titleStore');
+//Route::post('create', 'CreateQuizController@titleStore');
 
 Route::get('create/category', 'CreateQuizController@category');
 
