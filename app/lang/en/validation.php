@@ -94,7 +94,20 @@ return array(
         	'required' => 'Confirm your password!',
         	'same' => 'Are you sure it is the same password?'),
         'terms-conditions' => array(
-        	'required' => 'Remember about me, too!')
+        	'required' => 'Remember about me, too!'),
+        'rightAnswer'	=> array(
+        	'required'	=> 'Choose the right answer!'),
+        'answer-1'	=> array(
+        	'required'	=> 'Provide an answer!'),
+        'answer-2'	=> array(
+        	'required'	=> 'Provide an answer!'),
+        'answer-3'	=> array(
+        	'required'	=> 'Provide an answer!'),
+        'answer-4'	=> array(
+        	'required'	=> 'Provide an answer!'),
+        'question'	=> array(
+        	'required'	=> 'What is the question?'),
+
 		),
 
 	/*

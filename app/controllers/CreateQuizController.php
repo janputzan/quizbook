@@ -115,7 +115,12 @@ class CreateQuizController extends BaseController {
 
 			
 					
-			$validation = Validator::make( Input::all(), ['question' => 'required']);
+			$validation = Validator::make( Input::all(), ['question' => 'required', 
+															'answer-1' => 'required',
+															'answer-2' => 'required',
+															'answer-3' => 'required',
+															'answer-4' => 'required',
+															'rightAnswer' => 'required']);
 
 			if ($validation->fails())
 			{

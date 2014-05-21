@@ -900,7 +900,10 @@ background-color: #E7E7E7;
 {
 	color: #15AD9F;
 }
-
+.create-field
+{
+		padding-top: 5px;
+}
 .create-form
 {
 	position: relative;
@@ -914,7 +917,7 @@ background-color: #E7E7E7;
 	width: 100px;
 	font-size: x-large;
 	left: 402px;
-	top: 15px;
+	top: 25px;
 	margin-top: 2px;
 	
 }
@@ -933,6 +936,7 @@ background-color: #E7E7E7;
 	border: solid 1px #15AD9F;
 	font-size: x-large;
 	color: #15AD9F;
+
 }
 .create-field input[type='text']:focus
 {
@@ -941,6 +945,18 @@ background-color: #E7E7E7;
     box-shadow: 0 0 10px #86EBD4;
 }
 
+.create-field textarea
+{
+	border: solid 1px #15AD9F;
+	font-size: x-large;
+	color: #15AD9F;
+}
+.create-field textarea:focus
+{
+	outline: none;
+    
+    box-shadow: 0 0 10px #86EBD4;
+}
 .create-field .error
 {
 	color: #FF6A6A;
@@ -961,8 +977,74 @@ background-color: #E7E7E7;
 	position: absolute;
 	left:-17px;
 }
-
+.add-more-btn 
+{
+	position: absolute;
+	left:-317px ;
+	width: 150px;
+}
+.add-more-btn input[type='submit']
+{
+	width: 298px;
+}
+.answers
+{
+	position: relative;
+	top: 20px;
+	padding-bottom: 15px;
+}
+.answers input[type='text']
+{
+	width: 400px;
+}
+.answers .create-field
+{
+	padding-bottom: 10px; 
+}
+.question .error
+{
+	top: 212px;
+}
 /***** Title ********/
 
+.create-title-right
+{
+	position: relative;
+	left: 352px;
+	font-size: small;
+}
 
+.create-field input[type="radio"]
+{
+	padding-left: 10px;
+}
+.visible
+{
+	opacity: 1;
+	font-size: small;
+	color: #15AD9F;
+}
 
+.answers .error
+{
+	color: #FF6A6A;
+	position: relative;
+	float: right;
+	
+	left: -610px;
+	width: 300px;
+	height: 10px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	margin-bottom: 3px;
+	top: 49px;
+	font-size: small;
+	
+}
+.answers .radio-btn
+{
+	position: relative;
+	left: -395px;
+	top: 5px;
+	width: 100px;
+}

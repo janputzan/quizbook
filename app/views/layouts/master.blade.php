@@ -1,10 +1,17 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<title>quizbook.io</title>
 
 	{{ HTML::style('css/styles.css'); }}
 	{{ HTML::style('css/normalize.css'); }}
+
+	{{ HTML::style('css/green.css'); }}
+
+	{{ HTML::script('js/jquery-1.11.1.min.js'); }}
+	{{ HTML::script('js/icheck.js'); }}
+
+<head>
+	<title>quizbook.io</title>
+
 
 
 </head>
