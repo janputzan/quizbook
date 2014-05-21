@@ -1053,7 +1053,7 @@ background-color: #E7E7E7;
 {
 	position: relative;
 	float: right;
-	top:-35px;
+	top:-45px;
 }
 
 .questions
@@ -1064,4 +1064,15 @@ background-color: #E7E7E7;
 {
 	position: relative;
 	float: right;
+}
+
+.actions a
+{
+	color: #FF6A6A;
+}
+
+.quiz-title
+{
+	font-size: x-large;
+	color: #15AD9F;
 }

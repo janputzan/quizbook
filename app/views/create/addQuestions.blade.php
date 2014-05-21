@@ -44,25 +44,27 @@ $cont = Session::get('questions');
 
 		<div class='listOfQuestions'>
 
+			<span class='quiz-title'> {{ Session::get('quiz-title') }} </span>
+
 			@for ($i = 0; $i < sizeof(Session::get('questions')); $i++)
 
-				<div class="questions" >
+				<div class="questions" title="{{ $cont[$i]['question'] }}">
 
-					<div title="{{ $cont[$i]['question'] }}">
+					
 
-						@if (strlen($cont[$i]['question']) > 20)
+						@if (strlen($cont[$i]['question']) > 18)
 
-							{{ substr($cont[$i]['question'], 0, 20) }}... 
+							{{$i+1}}. {{ substr($cont[$i]['question'], 0, 15) }}... 
 
 						@else
 
-							{{ $cont[$i]['question'] }}
+							{{$i+1}}. {{ $cont[$i]['question'] }}
 
 						@endif
 
-						<span class="actions"><span>edit</span><span>delete</span></span>
+						<span class="actions"><span>{{link_to('questions/edit', 'edit')}}</span> | <span>{{link_to('questions/delete', 'delete')}}</span></span>
 
-					</div>
+					
 					
 				</div>
 
