@@ -5,7 +5,7 @@
 <script>
 $(document).ready(function(){
   $('input').iCheck({
-    checkboxClass: 'icheckbox_flat-green',
+    //checkboxClass: 'icheckbox_flat-green',
     radioClass: 'iradio_flat-green',
     labelHover: true,
     labelHoverClass: 'visible',
@@ -13,6 +13,14 @@ $(document).ready(function(){
   });
 });
 </script>
+
+<?php
+
+$cont = Session::get('questions');
+
+//dd($cont[0][0]['question']);
+
+?>
 
 	<div class="content-header ">
 
@@ -34,9 +42,39 @@ $(document).ready(function(){
 
 	<div class='content'>
 
+		<div class='listOfQuestions'>
+
+			@for ($i = 0; $i < sizeof(Session::get('questions')); $i++)
+
+				<div class="questions" >
+
+					<div title="{{ $cont[$i]['question'] }}">
+
+						@if (strlen($cont[$i]['question']) > 20)
+
+							{{ substr($cont[$i]['question'], 0, 20) }}... 
+
+						@else
+
+							{{ $cont[$i]['question'] }}
+
+						@endif
+
+						<span class="actions"><span>edit</span><span>delete</span></span>
+
+					</div>
+					
+				</div>
+
+				
+
+			@endfor
+
+		</div>
+
 		<div class="create-form">
 
-			<span class="create-title">Question 1</span>
+			<span class="create-title">Question {{ sizeof(Session::get('questions'))+1 }} </span>
 
 			{{ Form::open() }}
 

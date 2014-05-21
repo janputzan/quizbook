@@ -112,7 +112,7 @@ class CreateQuizController extends BaseController {
 		if(Auth::check())
 		{
 			$currentUser = Auth::user();
-
+			
 			
 					
 			$validation = Validator::make( Input::all(), ['question' => 'required', 
@@ -127,10 +127,39 @@ class CreateQuizController extends BaseController {
 				return Redirect::back() -> withInput() -> withErrors($validation->messages());	
 			}
 
+			if(Input::get('addQuestion'))
+			{
+					Session::push('questions', array(
+						'question' => Input::get('question'),
+						'answer1' => Input::get('answer-1'),
+						'answer2' => Input::get('answer-2'),
+						'answer3' => Input::get('answer-3'),
+						'answer4' => Input::get('answer-4'),
+						'rightAnswer' => Input::get('rightAnswer')));
 
-					Session::put('question', Input::get('question'));
 					
+					//dd(sizeof(Session::get('questions')));
+					return Redirect::to('create/add-questions');
+
+			}
+
+			if (Input::get('next'))
+			{
 				
+				Session::push('questions', array(
+						'question' => Input::get('question'),
+						'answer1' => Input::get('answer-1'),
+						'answer2' => Input::get('answer-2'),
+						'answer3' => Input::get('answer-3'),
+						'answer4' => Input::get('answer-4'),
+						'rightAnswer' => Input::get('rightAnswer')));
+
+				if (sizeof(Session::get('questions'))<6)
+				{
+
+					return Redirect::to('create/add-questions') -> withErrors(array('notification' => 'At least 6 questions!'));
+				}
+			}	
 
 			//return View::make('create.addTags') -> with('currentUser', $currentUser) -> with('class','4');
 			return Redirect::to('create/add-tags');
