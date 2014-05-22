@@ -1013,6 +1013,7 @@ background-color: #E7E7E7;
 .question .error
 {
 	top: 212px;
+	left: 85px;
 }
 /***** Title ********/
 
@@ -1040,20 +1041,20 @@ background-color: #E7E7E7;
 	position: relative;
 	float: right;
 	
-	left: -610px;
+	left: -295px;
 	width: 300px;
 	height: 10px;
 	padding-left: 5px;
 	padding-bottom: 5px;
 	margin-bottom: 3px;
-	top: 49px;
+	top: 0px;
 	font-size: small;
 	
 }
 .answers .radio-btn
 {
 	position: relative;
-	left: -395px;
+	left: -80px;
 	top: 5px;
 	width: 100px;
 }

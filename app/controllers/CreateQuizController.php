@@ -67,7 +67,8 @@ class CreateQuizController extends BaseController {
 		{
 			$currentUser = Auth::user();
 
-			
+			if (Input::get('back'))
+				return Redirect::to('create/title');
 					
 			$validation = Validator::make( Input::all(), ['category' => 'required']);
 
@@ -113,7 +114,8 @@ class CreateQuizController extends BaseController {
 		{
 			$currentUser = Auth::user();
 			
-			
+			if (Input::get('back'))
+				return Redirect::to('create/category');
 					
 			$validation = Validator::make( Input::all(), ['question' => 'required', 
 															'answer-1' => 'required',
@@ -193,7 +195,8 @@ class CreateQuizController extends BaseController {
 		{
 			$currentUser = Auth::user();
 
-			
+			if (Input::get('back'))
+				return Redirect::to('create/add-questions');
 					
 			$validation = Validator::make( Input::all(), ['tags' => 'required']);
 
@@ -300,7 +303,7 @@ class CreateQuizController extends BaseController {
 						'rightAnswer' => Input::get('rightAnswer'));
 
 				Session::put('questions', $cont);
-				
+
 				return Redirect::to('create/add-questions');
 				
 			}	
