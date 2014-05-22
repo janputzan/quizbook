@@ -300,6 +300,7 @@ class CreateQuizController extends BaseController {
 						'rightAnswer' => Input::get('rightAnswer'));
 
 				Session::put('questions', $cont);
+				
 				return Redirect::to('create/add-questions');
 				
 			}	
@@ -319,10 +320,23 @@ class CreateQuizController extends BaseController {
 
 		if(Auth::check())
 		{
-		/*
-			Session::forget('questions.'.$id);
+			
+			// dump Session to array
 
-		*/
+			$cont = Session::get('questions');
+
+			// delete an item from array (key = $id)
+
+			unset($cont[$id]);
+
+			// normalize integer keys
+
+			$cont = array_values($cont);
+
+			//store array in Session
+
+			Session::put('questions', $cont);
+
 			return Redirect::to('create/add-questions');
 		}
 		
