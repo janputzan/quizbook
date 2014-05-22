@@ -26,7 +26,7 @@ $cont = Session::get('questions');
 
 		<span class='title green'>
 
-			Add Questions
+			Edit Questions
 
 		</span>
 
@@ -34,7 +34,7 @@ $cont = Session::get('questions');
 
 		<span class='sub-title'>
 
-			add questions to your quiz
+			edit the question and save it
 
 		</span>
 
@@ -76,13 +76,13 @@ $cont = Session::get('questions');
 
 		<div class="create-form">
 
-			<span class="create-title">Question {{ sizeof(Session::get('questions'))+1 }} </span>
+			<span class="create-title">Question {{ $id+1 }} </span>
 
 			{{ Form::open() }}
 
 			<div class="create-field question">
 
-				{{ Form::textarea('question', null, ['size' => '37x5']) }}
+				{{ Form::textarea('question', $cont[$id]['question'], ['size' => '37x5']) }}
 
 				{{ $errors->first('question', '<div class=error>:message</div>') }}
 
@@ -95,7 +95,7 @@ $cont = Session::get('questions');
 
 				<div class="create-field">
 
-					{{ Form::input('text', 'answer-1') }}
+					{{ Form::input('text', 'answer-1',$cont[$id]['answer1']) }}
 
 					{{ $errors->first('answer-1', '<div class=error>:message</div>') }}
 
@@ -107,7 +107,7 @@ $cont = Session::get('questions');
 
 				<div class="create-field">
 
-					{{ Form::input('text', 'answer-2') }}
+					{{ Form::input('text', 'answer-2',$cont[$id]['answer2']) }}
 
 					{{ $errors->first('answer-2', '<div class=error>:message</div>') }}
 
@@ -120,7 +120,7 @@ $cont = Session::get('questions');
 
 				<div class="create-field">
 
-					{{ Form::input('text', 'answer-3') }}
+					{{ Form::input('text', 'answer-3',$cont[$id]['answer3']) }}
 
 					{{ $errors->first('answer-3', '<div class=error>:message</div>') }}
 
@@ -132,7 +132,7 @@ $cont = Session::get('questions');
 
 				<div class="create-field">
 
-					{{ Form::input('text', 'answer-4') }}
+					{{ Form::input('text', 'answer-4',$cont[$id]['answer4']) }}
 
 					{{ $errors->first('answer-4', '<div class=error>:message</div>') }}
 
@@ -147,29 +147,19 @@ $cont = Session::get('questions');
 
 			<div class="create-btn">
 
-				<span class='add-more-btn'>
-
-					<input type="submit" name="addQuestion" value="Add Another Question">
-
-				</span>
-
+				
 				<span class='back-btn'>
 
-					<input type="submit" name="back" value="Back">
+					<input type="submit" name="cancel" value="Cancel">
 
 				</span>
 
 				<span class="next-btn">
 
-					@if (sizeof(Session::get('questions'))<6) 	
+					
 
-						<input type="submit" name="next" value="Next" disabled>
+						<input type="submit" name="save" value="Save">
 
-					@else
-
-						<input type="submit" name="next" value="Next">
-
-					@endif
 
 				</span>
 

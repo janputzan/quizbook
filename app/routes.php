@@ -66,3 +66,8 @@ Route::get('create/share', 'CreateQuizController@share');
 
 Route::post('create/share', 'QuizController@share');
 
+Route::get('questions/edit/{id}', 'CreateQuizController@editQuestions');
+
+Route::post('questions/edit/{id}', 'CreateQuizController@storeEditQuestions');
+
+Route::get('questions/delete/{id}', 'CreateQuizController@deleteQuestions');

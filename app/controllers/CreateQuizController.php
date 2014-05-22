@@ -246,7 +246,89 @@ class CreateQuizController extends BaseController {
 
 	}
 
-	
+	public function editQuestions($id)
+	{
+		if(Auth::check())
+		{
+			$currentUser = Auth::user();
+
+			return View::make('create.editQuestions') -> with('currentUser', $currentUser) -> with('class','3') -> with('id',$id);
+		}
+
+		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+
+	}
+
+	public function storeEditQuestions($id)
+	{
+		if(Auth::check())
+		{
+			
+			if (Input::get('cancel'))
+				return Redirect::to('create/add-questions');
+
+			$currentUser = Auth::user();
+			
+			
+					
+			$validation = Validator::make( Input::all(), ['question' => 'required', 
+															'answer-1' => 'required',
+															'answer-2' => 'required',
+															'answer-3' => 'required',
+															'answer-4' => 'required',
+															'rightAnswer' => 'required']);
+
+			if ($validation->fails())
+			{
+				return Redirect::back() -> withInput() -> withErrors($validation->messages());	
+			}
+
+
+
+
+			if (Input::get('save'))
+			{
+				
+				$cont = Session::get('questions');
+
+				$cont[$id] = array(
+						'question' => Input::get('question'),
+						'answer1' => Input::get('answer-1'),
+						'answer2' => Input::get('answer-2'),
+						'answer3' => Input::get('answer-3'),
+						'answer4' => Input::get('answer-4'),
+						'rightAnswer' => Input::get('rightAnswer'));
+
+				Session::put('questions', $cont);
+				return Redirect::to('create/add-questions');
+				
+			}	
+
+			//return View::make('create.addTags') -> with('currentUser', $currentUser) -> with('class','4');
+			//
+		}
+
+		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+
+
+	}
+
+	public function deleteQuestions($id)
+	{
+
+
+		if(Auth::check())
+		{
+		/*
+			Session::forget('questions.'.$id);
+
+		*/
+			return Redirect::to('create/add-questions');
+		}
+		
+		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+
+	}
 
 
 

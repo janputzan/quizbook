@@ -921,6 +921,14 @@ background-color: #E7E7E7;
 	margin-top: 2px;
 	
 }
+.create-btn input[type='submit']:disabled
+{
+	position: relative;
+	
+	background-color: #F5F5F5;
+	border: solid 1px #15AD9F;
+	color: #15AD9F;
+}
 .create-btn input[type='submit']:hover
 {
 	position: relative;
