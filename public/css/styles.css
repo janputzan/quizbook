@@ -909,6 +909,7 @@ background-color: #E7E7E7;
 	position: relative;
 	padding-left: 85px;
 	top: 30px;
+	width: 600px;
 }
 .create-btn input[type='submit']
 {
@@ -1062,6 +1063,7 @@ background-color: #E7E7E7;
 	position: relative;
 	float: right;
 	top:-45px;
+	height: 400px;
 }
 
 .questions
