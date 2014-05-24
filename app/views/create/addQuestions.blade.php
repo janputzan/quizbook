@@ -14,6 +14,8 @@ $(document).ready(function(){
 });
 </script>
 
+
+
 <?php
 
 $cont = Session::get('questions');
@@ -82,7 +84,7 @@ $cont = Session::get('questions');
 
 			<div class="create-field question">
 
-				{{ Form::textarea('question', null, ['size' => '37x5']) }}
+				{{ Form::textarea('question', null, ['size' => '37x5']) }} <div id="counter"></div>
 
 				{{ $errors->first('question', '<div class=error>:message</div>') }}
 
@@ -182,6 +184,34 @@ $cont = Session::get('questions');
 		</div>
 	</div>
 
+	<script>
+
+	// character counter
+
+		function count(){  
+
+			var val   = $.trim($('textarea').val()),  
 	
+			chars = val.length;
+			  
+			$('#counter').html(chars);
+
+			//added limit of 250 characters, then it changes colour to red. 
+
+			if (chars>250)
+			{
+				document.getElementById("counter").className = "counter-error";
+			}
+			if (chars<=250)
+			{
+				document.getElementById("counter").className = "";
+			}
+		}
+
+		count();
+
+		$('textarea').on('input', count);
+
+</script>
 
 @stop

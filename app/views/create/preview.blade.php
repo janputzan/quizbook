@@ -31,14 +31,41 @@
 		</div>
 
 		<div>
-			{{ Session::get('question') }}
+			{{ Session::get('questions.question') }}
 		</div>
 
 		<div>
 			{{ Session::get('tags') }}
 		</div>
 
-		
+		{{ Form::open( ['route' => 'quizzes.store'] ) }}
+<div class="create-btn">
+
+				
+
+				<div class='back-btn'>
+
+					<input type="submit" name="back" value="Back">
+
+				</div>
+
+				<div class="finish-btn">
+
+					
+
+						<input type="submit" name="finish" value="Create Quiz">
+
+					
+
+				</div>
+
+			</div>
+
+
+{{ Form::close() }}
+
 	</div>
+
+	
 
 @stop

@@ -29,7 +29,40 @@ class QuizController extends \BaseController {
 	 */
 	public function store()
 	{
-		return 'yyyyyyyyaaaaaayyy';
+		
+		if(Auth::check())
+		{
+			if (Input::get('back'))
+				return Redirect::to('create/add-questions');
+
+			if (Input::get('finish'))
+			{
+				$currentUser = Auth::user();
+
+				/*working
+
+
+
+				$quiz = new Quiz;
+
+				$quiz->title = Session::get('quiz-title');
+
+				$quiz->dificulty = 5.0;
+
+				$quiz->user_id = $currentUser->id;
+
+				$category = Category::where('name', '=', Session::get('category'))->first();
+
+				$quiz->category_id = $category->id;
+
+				$quiz->save();
+
+
+				*/
+
+				
+			}
+		}
 	}
 
 	/**

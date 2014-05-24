@@ -1087,3 +1087,19 @@ background-color: #E7E7E7;
 	font-size: x-large;
 	color: #15AD9F;
 }
+.finish-btn
+{
+	width: 300px;
+	position: relative;
+	left: -200px;
+}
+
+#counter
+{
+	position: relative;
+	left: 465px;
+}
+.counter-error
+{
+	color: #FF6A6A;
+}

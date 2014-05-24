@@ -9,6 +9,8 @@
 	{{ HTML::script('js/jquery-1.11.1.min.js'); }}
 	{{ HTML::script('js/icheck.js'); }}
 
+	
+
 <head>
 	<title>quizbook.io</title>
 

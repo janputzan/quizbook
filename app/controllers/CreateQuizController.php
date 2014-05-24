@@ -117,7 +117,7 @@ class CreateQuizController extends BaseController {
 			if (Input::get('back'))
 				return Redirect::to('create/category');
 					
-			$validation = Validator::make( Input::all(), ['question' => 'required', 
+			$validation = Validator::make( Input::all(), ['question' => 'required | max:250', 
 															'answer-1' => 'required',
 															'answer-2' => 'required',
 															'answer-3' => 'required',
