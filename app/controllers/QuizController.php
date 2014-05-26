@@ -51,7 +51,7 @@ class QuizController extends \BaseController {
 
 				$quiz->user_id = $currentUser->id;
 
-				$category = Category::where('name', '=', Session::get('category'))->first();
+	*!*			$category = Category::where('name', '=', Session::get('category'))->first();
 
 				$quiz->category_id = $category->id;
 
