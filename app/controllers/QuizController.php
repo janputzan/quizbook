@@ -39,7 +39,7 @@ class QuizController extends \BaseController {
 			{
 				$currentUser = Auth::user();
 
-				/*working
+				
 
 
 
@@ -51,18 +51,97 @@ class QuizController extends \BaseController {
 
 				$quiz->user_id = $currentUser->id;
 
-	*!*			$category = Category::where('name', '=', Session::get('category'))->first();
-
-				$quiz->category_id = $category->id;
+				$quiz->category_id = Session::get('category');
 
 				$quiz->save();
 
+				$tag = new Tag;
 
-				*/
+				$tag->name = Session::get('tags');
+
+				$tag->save();
+
+				$quiz->tag()->attach($tag->id);
+
+				//$question = new Question;
+
+				$cont = Session::get('questions');
+
+				for ($i = 0; $i < sizeof(Session::get('questions')); $i++)
+				{
+
+					$answer1 = new Answer;
+
+					$answer1->answer = $cont[$i]['answer1'];
+
+					$answer1->save();
+
+					$answer2 = new Answer;
+
+					$answer2->answer = $cont[$i]['answer2'];
+
+					$answer2->save();
+
+					$answer3 = new Answer;
+
+					$answer3->answer = $cont[$i]['answer3'];
+
+					$answer3->save();
+
+					$answer4 = new Answer;
+
+					$answer4->answer = $cont[$i]['answer4'];
+
+					$answer4->save();
+
+
+
+					$question = new Question;
+
+					$question->question = $cont[$i]['question'];
+
+					switch ($cont[$i]['rightAnswer'])
+					{
+						case '1':
+							$question->right_answer = $answer1->id;
+							break;
+						case '2':
+							$question->right_answer = $answer2->id;
+							break;
+						case '3':
+							$question->right_answer = $answer3->id;
+							break;
+						case '4':
+							$question->right_answer = $answer4->id;
+							break;
+					}
+
+					$question->save();
+
+
+					$question->answer()->attach($answer1->id);
+					$question->answer()->attach($answer2->id);
+					$question->answer()->attach($answer3->id);
+					$question->answer()->attach($answer4->id);
+
+					$quiz->question()->attach($question->id);
+
+
+				}
+
+				Session::forget('quiz-title');
+				Session::forget('category');
+				Session::forget('tags');
+				Session::forget('questions');
+
+				return Redirect::to('/')-> withErrors(array('notification' => 'Quiz created..'));
+				
 
 				
 			}
 		}
+
+		return Redirect::to('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
 	}
 
 	/**

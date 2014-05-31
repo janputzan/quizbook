@@ -6,9 +6,11 @@ class Question extends Eloquent {
 
 	protected $table = 'questions';
 
+	public $timestamps = false;
+
 	 public function answer()
     {
-    	return $this->hasMany('Answer');
+    	return $this->belongsToMany('Answer', 'questions_answers', 'question_id', 'answer_id');
     }
 
     public function quiz()

@@ -17,12 +17,12 @@ class Quiz extends Eloquent {
 
     public function question()
     {
-    	return $this->hasMany('Question');
+    	return $this->belongsToMany('Question', 'quizzes_questions', 'quiz_id', 'question_id');
     }
 
     public function tag()
     {
-    	return $this->hasMany('Tags');
+    	return $this->belongsToMany('Tag', 'quizzes_tags', 'quiz_id', 'tag_id');
     }
 
 
