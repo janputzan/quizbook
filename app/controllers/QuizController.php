@@ -9,7 +9,11 @@ class QuizController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$quizzes = Quiz::all();
+
+		$answers = Answer::all()->toJson();
+
+		dd($answers);
 	}
 
 	/**
