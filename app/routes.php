@@ -6,6 +6,8 @@ Route::get('404', 'HomeController@show404');
 
 //Route::get('edit', 'UserController@edit');
 
+Route::get('users/all', 'UserController@index');
+
 Route::post('users/{username}', 'UserController@update');
 
 Route::get('register', 'UserController@create');
@@ -89,10 +91,12 @@ Route::get('browse/quizzes/all', 'BrowseController@allQuizzes');
 
 Route::get('browse/quizzes/newest', 'BrowseController@newest');
 
-
+Route::get('browse/quizzes/tags/{name}', 'BrowseController@byTags');
 
 Route::get('browse/quizzes/most-dificult', 'BrowseController@dificult');
 
 Route::get('browse/quizzes/easiest', 'BrowseController@easiest');
 
 Route::get('browse/quizzes/{id}', 'BrowseController@showQuiz');
+
+Route::get('browse/tags', 'BrowseController@showTags');

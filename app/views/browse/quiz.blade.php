@@ -1,16 +1,35 @@
 @extends ('layouts.browse')
 
-@section('categories-menu')
+@section('quizzes-menu')
 
-	@foreach ($categories as $category)
+	
 
 	<li>
 
-		{{ link_to("browse/categories/$category->name", $category->name, array('class'=>'link-sub-menu')) }}
+		{{ link_to("browse/quizzes/all", 'all' , array('class'=>'link-sub-menu')) }}
 
 	</li>
 
-	@endforeach
+	<li>
+
+		{{ link_to("browse/quizzes/newest", 'newest' , array('class'=>'link-sub-menu')) }}
+
+	</li>
+
+	
+	<li>
+
+		{{ link_to("browse/quizzes/most-dificult", 'most dificult' , array('class'=>'link-sub-menu')) }}
+
+	</li>
+
+	<li>
+
+		{{ link_to("browse/quizzes/easiest", 'easiest' , array('class'=>'link-sub-menu')) }}
+
+	</li>
+
+	
 
 
 

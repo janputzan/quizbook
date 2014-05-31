@@ -11,7 +11,19 @@ class UserController extends \BaseController {
 	 */
 	public function index()
 	{
-		return "is working";
+		$users = User::all();
+
+		if(Auth::check())
+		{
+			$currentUser = Auth::user();
+
+			return View::make('users.index') -> with('currentUser', $currentUser)->with('users', $users);
+		}
+
+		return View::make('users.index')->with('users', $users);
+
+
+
 	}
 
 	/**

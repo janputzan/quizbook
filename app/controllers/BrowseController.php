@@ -99,10 +99,10 @@ class BrowseController extends BaseController {
 		{
 			$currentUser = Auth::user();
 
-			return View::make('browse.quiz') -> with('currentUser', $currentUser)->with('quiz', $quiz)->with('name', $name)->with('owner', $owner)->with('count', $numberQuestions)->with('taken', $numberTaken)->with('bestScore', $bestScore)->with('categories', $categories);
+			return View::make('browse.quiz') -> with('currentUser', $currentUser)->with('quiz', $quiz)->with('name', $name)->with('owner', $owner)->with('count', $numberQuestions)->with('taken', $numberTaken)->with('bestScore', $bestScore);
 		}
 
-		return View::make('browse.quiz')->with('quiz', $quiz)->with('name', $name)->with('owner', $owner)->with('count', $numberQuestions)->with('taken', $numberTaken)->with('bestScore', $bestScore)->with('categories', $categories);
+		return View::make('browse.quiz')->with('quiz', $quiz)->with('name', $name)->with('owner', $owner)->with('count', $numberQuestions)->with('taken', $numberTaken)->with('bestScore', $bestScore);
 
 
 
@@ -114,7 +114,7 @@ class BrowseController extends BaseController {
 	public function allQuizzes()
 	{
 
-		$quizzes = Quiz::all();
+		$quizzes = Quiz::orderBy('title', 'ASC')->get();
 
 		if(Auth::check())
 		{
@@ -176,6 +176,48 @@ class BrowseController extends BaseController {
 		}
 
 		return View::make('browse.quizzes')->with('quizzes', $quizzes)->with('title', 'easiest');
+
+
+
+	}
+
+	public function showTags()
+	{
+
+		$tags = Tag::orderBy('name', 'ASC')->get();
+
+
+		if(Auth::check())
+		{
+			$currentUser = Auth::user();
+
+			return View::make('browse.tags') -> with('currentUser', $currentUser)->with('tags', $tags);
+		}
+
+		return View::make('browse.tags')->with('tags', $tags);
+
+
+	}
+
+	public function byTags($name)
+	{
+
+		$tag = Tag::where('name', $name)->first();
+
+		//$posts = Post::has('comments')->get();
+
+		$quizzes = Quiz::has('tag')->get();
+
+		
+
+		if(Auth::check())
+		{
+			$currentUser = Auth::user();
+
+			return View::make('browse.quizzes')-> with('currentUser', $currentUser)->with('quizzes', $quizzes)->with('title', $tag->name);
+		}
+
+		return View::make('browse.quizzes')->with('quizzes', $quizzes)->with('title', $tag->name);
 
 
 

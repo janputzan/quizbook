@@ -60,7 +60,7 @@
 
 				<li class='side-nav-item'>
 
-				{{ link_to("browse",'TAGS', array('class'=>'link-side-menu'))}}
+				{{ link_to("browse/tags",'TAGS', array('class'=>'link-side-menu'))}}
 
 				</li>
 
@@ -68,7 +68,7 @@
 
 				<li class='side-nav-item'>
 
-				{{ link_to("browse",'USERS', array('class'=>'link-side-menu'))}}
+				{{ link_to("users/all",'USERS', array('class'=>'link-side-menu'))}}
 
 				</li>
 
