@@ -610,6 +610,40 @@ input[type="submit"]:hover
 }
 
 
+/*
+
+	Side menu - Browse
+
+*/
+
+.browse
+{
+	background-color: #FF6A6A;
+	top: 0px;
+}
+.browse .link-side-menu
+{
+	color: #F5F5F5;
+}
+.browse .link-side-menu:hover
+{
+	color: #414141;
+}
+
+.browse .link-sub-menu
+{
+	color: #F5F5F5;
+}
+
+.browse .link-sub-menu:hover
+{
+	color: #414141;
+}
+.browse .active
+{
+	color: #414141;
+}
+
 /***************************/
 .main-content
 {
@@ -1103,3 +1137,40 @@ background-color: #E7E7E7;
 {
 	color: #FF6A6A;
 }
+
+
+/*
+
+	Browse - Categories
+
+
+*/
+
+.list-item
+{
+	color: #FF6A6A;
+}
+
+.red
+{
+	color: #FF6A6A;
+}
+
+.red a:hover, .item a:hover
+{
+	color: #414141;
+}
+
+.list
+{
+	position: relative;
+	padding-left: 125px;
+	top: 30px;
+	width: 600px;
+}
+
+.item
+{
+	font-size: x-large;
+}
+

@@ -9,11 +9,7 @@ class QuizController extends \BaseController {
 	 */
 	public function index()
 	{
-		$quizzes = Quiz::all();
-
-		$answers = Answer::all()->toJson();
-
-		dd($answers);
+		
 	}
 
 	/**
@@ -133,10 +129,16 @@ class QuizController extends \BaseController {
 
 				}
 
+				//adding 50 points for creating a quiz and 20 points for each question to the total score 
+
+				$currentUser->total_score += 50 + sizeof(Session::get('questions')) * 20;
+				$currentUser->save();
+
 				Session::forget('quiz-title');
 				Session::forget('category');
 				Session::forget('tags');
 				Session::forget('questions');
+
 
 				return Redirect::to('/')-> withErrors(array('notification' => 'Quiz created..'));
 				

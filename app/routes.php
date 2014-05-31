@@ -12,6 +12,8 @@ Route::get('register', 'UserController@create');
 
 Route::resource('users', 'UserController');
 
+
+
 Route::resource('quizzes', 'QuizController');
 
 Route::get('login', 'SessionsController@create');
@@ -75,3 +77,22 @@ Route::get('questions/delete/{id}', 'CreateQuizController@deleteQuestions');
 
 //
 Route::get('social/{action?}', 'HybridAuthController@login');
+
+
+//browse
+
+Route::get('browse', 'BrowseController@categories');
+
+Route::get('browse/categories/{name}', 'BrowseController@showCategory');
+
+Route::get('browse/quizzes/all', 'BrowseController@allQuizzes');
+
+Route::get('browse/quizzes/newest', 'BrowseController@newest');
+
+
+
+Route::get('browse/quizzes/most-dificult', 'BrowseController@dificult');
+
+Route::get('browse/quizzes/easiest', 'BrowseController@easiest');
+
+Route::get('browse/quizzes/{id}', 'BrowseController@showQuiz');
