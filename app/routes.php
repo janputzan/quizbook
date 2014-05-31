@@ -71,3 +71,7 @@ Route::get('questions/edit/{id}', 'CreateQuizController@editQuestions');
 Route::post('questions/edit/{id}', 'CreateQuizController@storeEditQuestions');
 
 Route::get('questions/delete/{id}', 'CreateQuizController@deleteQuestions');
+
+
+//
+Route::get('social/{action?}', 'HybridAuthController@login');

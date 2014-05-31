@@ -16,7 +16,7 @@
 
 			<div class="social">
 
-				<a id="myLink" title="Click to log in to fb" href="#" onclick="checkLoginState();return false;"><img src="images/facebook_458x85.png" class="social-img" /></a>
+				<a id="myLink" title="Click to log in to fb" href="social/auth" ><img src="images/facebook_458x85.png" class="social-img" /></a>
 
 				<img src="images/google_458x85.png" class="social-img" />
 
@@ -46,6 +46,6 @@
 
 	</div>
 
-	{{ HTML::script('js/facebook-login.js'); }}
+	
 
 @stop

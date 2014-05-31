@@ -44,6 +44,10 @@ class SessionsController extends BaseController {
 
 		Session::flush();
 
+		$socialAuth = new Hybrid_Auth(app_path() . '/config/hybridauth.php');
+
+		$socialAuth->logoutAllProviders();
+
 		return Redirect::route('sessions.create') -> withErrors(array('notification' => 'You have logged out..'));
 
 	}
