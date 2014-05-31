@@ -39,7 +39,7 @@
 		</div>
 
 		{{ Form::open( ['route' => 'quizzes.store'] ) }}
-<div class="create-btn">
+		<div class="create-btn">
 
 				
 

@@ -10,7 +10,20 @@ class Quiz extends Eloquent {
         return $this->belongsTo('User');
     }
 
-    
+    public function category()
+    {
+    	return $this->belongsTo('Category');
+    }
+
+    public function question()
+    {
+    	return $this->hasMany('Question');
+    }
+
+    public function tag()
+    {
+    	return $this->hasMany('Tags');
+    }
 
 
 }
