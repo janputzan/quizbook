@@ -938,7 +938,7 @@ background-color: #E7E7E7;
 	border: solid 1px #15AD9F;
 	color: #15AD9F;
 }
-.create-field input[type='text']
+.create-field input[type='text'], .create-field select
 {
 	width: 500px;
 	height:  45px;
@@ -947,7 +947,7 @@ background-color: #E7E7E7;
 	color: #15AD9F;
 
 }
-.create-field input[type='text']:focus
+.create-field input[type='text']:focus, .create-field select:focus
 {
 	outline: none;
     

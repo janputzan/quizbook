@@ -51,9 +51,11 @@ class CreateQuizController extends BaseController {
 
 		if(Auth::check())
 		{
-			$currentUser = Auth::user();			
+			$currentUser = Auth::user();	
 
-			return View::make('create.category') -> with('currentUser', $currentUser) -> with('class','2');
+			$categories = Category::lists('name', 'id');		
+
+			return View::make('create.category') -> with('currentUser', $currentUser) -> with('class','2') ->with('categories' , $categories);
 		}
 
 		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
@@ -80,7 +82,7 @@ class CreateQuizController extends BaseController {
 
 					Session::put('category', Input::get('category'));
 					
-				
+					//dd(Session::get('category'));
 
 			//return View::make('create.addQuestions') -> with('currentUser', $currentUser) -> with('class','3');
 			return Redirect::to('create/add-questions');

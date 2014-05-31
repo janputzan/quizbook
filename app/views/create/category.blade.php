@@ -28,7 +28,7 @@
 
 			<div class="create-field">
 
-				{{ Form::input('text', 'category') }}
+				{{ Form::select('category', $categories) }}
 
 				{{ $errors->first('category', '<div class=error>:message</div>') }}
 

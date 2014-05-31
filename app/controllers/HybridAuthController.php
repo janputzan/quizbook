@@ -26,10 +26,13 @@ class HybridAuthController extends BaseController {
 	try {
 		// create a HybridAuth object
 		$socialAuth = new Hybrid_Auth(app_path() . '/config/hybridauth.php');
+
 		// authenticate with Google
 		$provider = $socialAuth->authenticate("Facebook");
+
 		// fetch user profile
 		$userProfile = $provider->getUserProfile();
+		
 	}
 	
 	catch(Exception $e) {
@@ -45,13 +48,18 @@ class HybridAuthController extends BaseController {
 	$photo = $userProfile->photoURL;
 	$email = $userProfile->email;
 
-
+	//get profile uid
 	$profile = Profile::whereUid($uid)->first();
 
+
+	//check if exists in DB
 	if (empty($profile)) {
 
+		//get user with email
 		$user = User::whereEmail($email)->first();
 
+		
+		//if doesn't exist - create a new user
 		if (empty($user)) {
  
 	        $user = new User;
@@ -59,13 +67,18 @@ class HybridAuthController extends BaseController {
 	        $user->password = Hash::make('changeme');
 	        $user->email = $email;
 	    }
+
+	    //add profile photo to user
 	    $user->profile_photo = $photo;
 	 
 	    $user->save();
 
+	    //create a new profile
         $profile = new Profile();
         $profile->uid = $uid;
         
+
+        //associate it with user
         $profile = $user->profiles()->save($profile);
     }
 
@@ -74,18 +87,14 @@ class HybridAuthController extends BaseController {
 
     $user = $profile->user;
 
+
+    //log in the user
     Auth::login($user);
 
     return Redirect::to('/')-> withErrors(array('notification' => 'You are logged in..'));
 
 
-	// access user profile data
-	//echo "Connected with: <b>{$provider->id}</b><br />";
-	//echo "As: <b>{$userProfile->displayName}</b><br />";
-	//echo "<pre>" . print_r( $userProfile, true ) . "</pre><br />";
-
-	// logout
-	//$provider->logout();
+	
 }
 
 
