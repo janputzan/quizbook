@@ -1238,3 +1238,18 @@ position: relative;
 	top: 0px;
 	width:600px;
 }
+
+.take-btn input[type='submit']
+{
+	width: 300px;
+	height: 50px;
+	font-size: x-large;
+	left: 112px;
+	top: 5px;
+}
+
+.form-take
+{
+	position: relative;
+	top: 30px;
+}

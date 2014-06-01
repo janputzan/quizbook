@@ -101,6 +101,8 @@ Route::get('browse/quizzes/easiest', 'BrowseController@easiest');
 
 Route::get('browse/quizzes/{id}', 'BrowseController@showQuiz');
 
+Route::post('browse/quizzes/{id}', 'TakeQuizController@takeQuiz');
+
 Route::get('browse/tags', 'BrowseController@showTags');
 
 Route::post('browse/tags', 'SearchController@searchTags');

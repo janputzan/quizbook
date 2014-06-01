@@ -113,6 +113,24 @@
 
 			</table>
 
+
+				
+					{{ Form::open() }}
+
+					<div class="form-take">
+
+						<span class="take-btn">
+
+							{{ Form::submit('take quiz') }}
+
+						</span>
+
+					</div>
+
+					{{ Form::close() }}
+
+			
+
 		</div>
 
 	</div>
