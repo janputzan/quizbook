@@ -22,13 +22,15 @@ class CreateUsersTable extends Migration {
 
 			$table -> string('email') -> unique();
 
-			$table -> string('facebook_id') -> nullable();
+			//$table -> string('facebook_id') -> nullable();
 
-			$table -> string('google_id') -> nullable();
+			//$table -> string('google_id') -> nullable();
 
-			$table -> string('profile_photo');
+			$table -> string('profile_photo')-> nullable();
 
-			$table -> integer('total_score');
+			$table -> integer('total_score')->default(0);
+
+			$table -> string('remember_token')-> nullable();
 
 			$table -> timestamps();		
 		});

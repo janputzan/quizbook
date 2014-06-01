@@ -163,15 +163,15 @@ class UserController extends \BaseController {
 
 			$user = Auth::user();
 
-		if (Hash::check($user->password, Input::get('current-password')))
+		if (Hash::check(Input::get('current-password'), $user->password ))
 		{
-			//dd($user);
+			//dd($user->password);
 
 			$user->password = Hash::make(Input::get('new-password'));
 
 			$user->save();
 
-			return Redirect::route('users.show')-> withErrors(array('notification' => 'Your password has changed..'))->with('class', '1');
+			return Redirect::back()-> withErrors(array('notification' => 'Your password has changed..'))->with('class', '1');
 
 		}
 

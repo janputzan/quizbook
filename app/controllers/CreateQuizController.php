@@ -208,9 +208,12 @@ class CreateQuizController extends BaseController {
 			}
 
 
-					Session::put('tags', Input::get('tags'));
+					$tags = explode(" ", Input::get('tags'));
+
+
+					Session::put('tags', $tags);
 					
-				
+					//dd(Session::get('tags'));
 
 			//return View::make('create.preview') -> with('currentUser', $currentUser) -> with('class','5');
 			return Redirect::to('create/preview');

@@ -55,13 +55,31 @@ class QuizController extends \BaseController {
 
 				$quiz->save();
 
-				$tag = new Tag;
+				
+				$tags = Session::get('tags');
 
-				$tag->name = Session::get('tags');
+				foreach ($tags as $name)
+				{
+					
+					//get tag with name
+					$tag = Tag::whereName($name)->first();
 
-				$tag->save();
 
-				$quiz->tag()->attach($tag->id);
+					//check if exists in DB
+					if (empty($tag)) {
+
+						$tag = new Tag;
+
+						$tag->name =$name;
+
+						$tag->save();
+
+
+					}
+						
+					$quiz->tag()->attach($tag->id);
+
+				}
 
 				//$question = new Question;
 

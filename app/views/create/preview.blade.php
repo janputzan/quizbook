@@ -35,7 +35,13 @@
 		</div>
 
 		<div>
-			{{ Session::get('tags') }}
+
+		@foreach (Session::get('tags') as $tag)
+
+
+			{{ $tag }}<br />
+
+		@endforeach
 		</div>
 
 		{{ Form::open( ['route' => 'quizzes.store'] ) }}
