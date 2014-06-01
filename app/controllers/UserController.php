@@ -85,17 +85,31 @@ class UserController extends \BaseController {
 		
 		$user = User::where('username', '=', $username)->first();
 
+		$quizzesTaken = $user->quizzesTaken()->get();
+
+		$quizzesCreated = $user->quizzes()->get();
+
+		//dd($quizzesCreated->count());
+
 		if (Auth::check())
 		{
 			$currentUser = Auth::user();
 			
 			
 
-			return View::make('users.show')->with( 'user', $user)->with('currentUser', $currentUser)->with('class', '3')->with('username', $username);
+			return View::make('users.show')->with( 'user', $user)
+											->with('currentUser', $currentUser)
+											->with('class', '3')
+											->with('username', $username)
+											->with('quizzesCreated', $quizzesCreated)
+											->with('quizzesTaken', $quizzesTaken);
 
 		}
 
-		return View::make('users.show')->with( 'user', $user)->with('class', '3');
+		return View::make('users.show')->with( 'user', $user)
+										->with('class', '3')
+										->with('quizzesCreated', $quizzesCreated)
+										->with('quizzesTaken', $quizzesTaken);
 	}
 
 	/**

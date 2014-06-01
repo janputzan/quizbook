@@ -35,6 +35,54 @@
 
 	</div>
 
+	<div class="quizzes-list">
+
+				<table>
+					
+					
+
+					<tr>
+
+		@if($quizzesCreated->count() > 0)
+
+			<td>
+
+			<span>quizzes created:</span> <br />
+
+			@foreach($quizzesCreated as $quiz)
+
+				{{ link_to("browse/quizzes/$quiz->id", $quiz->title, array('class'=>'red')) }} <br />
+
+			@endforeach
+
+			</td>
+
+		@endif
+
+		@if($quizzesTaken->count() > 0)
+
+			<td>
+
+			<span>quizzes taken:</span> <br />
+
+			@foreach($quizzesTaken as $quiz)
+
+				{{ link_to("browse/quizzes/$quiz->id", $quiz->title, array('class'=>'red')) }} <br />
+
+			@endforeach
+
+			</td>
+
+		@endif
+
+		</tr>
+
+		</table>
+
+		</div>
+
+
+
 
 @stop
 

@@ -1205,7 +1205,7 @@ position: relative;
 .search-results-main span
 {
 	font-size: large;
-	
+
 }
 
 .search-results-main
@@ -1214,5 +1214,27 @@ position: relative;
 	left: -100px;
 
 	top: 130px;
+	width:600px;
+}
+
+.quizzes-list td
+{
+	width: 250px;
+	
+	
+}
+.quizzes-list span
+{
+	font-size: large;
+	text-align: center;
+	
+}
+
+.quizzes-list
+{
+	position: relative;
+	left: 15px;
+
+	top: 0px;
 	width:600px;
 }
