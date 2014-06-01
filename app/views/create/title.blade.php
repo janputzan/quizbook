@@ -28,7 +28,7 @@
 
 			<div class="create-field">
 
-				{{ Form::input('text', 'quiz-title') }}
+				{{ Form::text('quiz-title', Session::get('quiz-title')) }}
 
 				{{ $errors->first('quiz-title', '<div class=error>:message</div>') }}
 

@@ -38,7 +38,7 @@
 
 					<span class='back-btn'>
 
-						{{ Form::submit('Back') }}
+						<input type="submit" name="back" value="Back">
 
 					</span>
 

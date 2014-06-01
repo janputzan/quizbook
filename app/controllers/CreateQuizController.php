@@ -118,21 +118,38 @@ class CreateQuizController extends BaseController {
 			
 			if (Input::get('back'))
 				return Redirect::to('create/category');
+
+			if (Input::get('next'))
+			{
+				
+				
+				if (sizeof(Session::get('questions'))<6)
+				{
+
+					return Redirect::to('create/add-questions') -> withErrors(array('notification' => 'At least 6 questions!'));
+				}
+
+				
+			}
 					
-			$validation = Validator::make( Input::all(), ['question' => 'required | max:250', 
+			
+
+			if(Input::get('addQuestion'))
+			{
+
+				$validation = Validator::make( Input::all(), ['question' => 'required | max:250', 
 															'answer-1' => 'required',
 															'answer-2' => 'required',
 															'answer-3' => 'required',
 															'answer-4' => 'required',
 															'rightAnswer' => 'required']);
 
-			if ($validation->fails())
-			{
-				return Redirect::back() -> withInput() -> withErrors($validation->messages());	
-			}
+				if ($validation->fails())
+				{
+					return Redirect::back() -> withInput() -> withErrors($validation->messages());	
+				}
+					
 
-			if(Input::get('addQuestion'))
-			{
 					Session::push('questions', array(
 						'question' => Input::get('question'),
 						'answer1' => Input::get('answer-1'),
@@ -147,23 +164,7 @@ class CreateQuizController extends BaseController {
 
 			}
 
-			if (Input::get('next'))
-			{
 				
-				Session::push('questions', array(
-						'question' => Input::get('question'),
-						'answer1' => Input::get('answer-1'),
-						'answer2' => Input::get('answer-2'),
-						'answer3' => Input::get('answer-3'),
-						'answer4' => Input::get('answer-4'),
-						'rightAnswer' => Input::get('rightAnswer')));
-
-				if (sizeof(Session::get('questions'))<6)
-				{
-
-					return Redirect::to('create/add-questions') -> withErrors(array('notification' => 'At least 6 questions!'));
-				}
-			}	
 
 			//return View::make('create.addTags') -> with('currentUser', $currentUser) -> with('class','4');
 			return Redirect::to('create/add-tags');

@@ -33,7 +33,7 @@ class QuizController extends \BaseController {
 		if(Auth::check())
 		{
 			if (Input::get('back'))
-				return Redirect::to('create/add-questions');
+				return Redirect::to('create/add-tags');
 
 			if (Input::get('finish'))
 			{

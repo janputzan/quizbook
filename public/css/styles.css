@@ -1128,11 +1128,11 @@ background-color: #E7E7E7;
 	font-size: x-large;
 	color: #15AD9F;
 }
-.finish-btn
+.finish-btn input[type='submit']
 {
 	width: 300px;
 	position: relative;
-	left: -200px;
+	left: 50px;
 }
 
 #counter
@@ -1252,4 +1252,17 @@ position: relative;
 {
 	position: relative;
 	top: 30px;
+}
+
+
+.preview td
+{
+	width:200px;
+}
+
+.preview
+{
+	position: relative;
+	left: 30px;
+	top: -50px;
 }
