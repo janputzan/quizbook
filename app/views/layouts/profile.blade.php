@@ -24,6 +24,8 @@
 
 @if (Auth::check())
 
+@if ($currentUser->username==$username)
+
 @section ('side-menu')
 	
 	
@@ -65,6 +67,6 @@
 @else
 
 
-
+@endif
 @endif
 

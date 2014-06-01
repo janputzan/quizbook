@@ -8,6 +8,8 @@ Route::get('404', 'HomeController@show404');
 
 Route::get('users/all', 'UserController@index');
 
+Route::post('users/all', 'SearchController@searchUsers');
+
 Route::post('users/{username}', 'UserController@update');
 
 Route::get('register', 'UserController@create');
@@ -34,9 +36,9 @@ Route::get('leaderboards/all-times', 'LeaderboardsController@allTimes');
 
 Route::get('login/fb', 'HomeController@fbLogin');
 
-Route::get('search', 'HomeController@search');
+Route::get('search', 'SearchController@search');
 
-Route::post('search', 'HomeController@searchResult');
+Route::post('search', 'SearchController@searchResult');
 
 
 
@@ -100,3 +102,5 @@ Route::get('browse/quizzes/easiest', 'BrowseController@easiest');
 Route::get('browse/quizzes/{id}', 'BrowseController@showQuiz');
 
 Route::get('browse/tags', 'BrowseController@showTags');
+
+Route::post('browse/tags', 'SearchController@searchTags');

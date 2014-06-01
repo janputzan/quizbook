@@ -91,7 +91,7 @@ class UserController extends \BaseController {
 			
 			
 
-			return View::make('users.show')->with( 'user', $user)->with('currentUser', $currentUser)->with('class', '3');
+			return View::make('users.show')->with( 'user', $user)->with('currentUser', $currentUser)->with('class', '3')->with('username', $username);
 
 		}
 
@@ -197,5 +197,8 @@ class UserController extends \BaseController {
 	{
 		//
 	}
+
+	
+
 
 }

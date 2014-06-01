@@ -48,7 +48,7 @@
 
 							{{ Form::label('users', 'Users') }}
 
-							{{ Form::input('checkbox', 'users') }}
+							{{ Form::checkbox('users', 'yes') }}
 
 						</span>
 
@@ -56,7 +56,7 @@
 
 							{{ Form::label('quizzes', 'Quizzes') }}
 
-							{{ Form::input('checkbox', 'quizzes') }}
+							{{ Form::checkbox('quizzes', 'yes') }}
 
 						</span>
 
@@ -64,7 +64,7 @@
 
 							{{ Form::label('tags', 'Tags') }}
 
-							{{ Form::input('checkbox', 'tags') }}
+							{{ Form::checkbox('tags', 'yes') }}
 
 						</span>
 
@@ -84,13 +84,66 @@
 
 			</div>
 
-			<div class="search-results">
+			<div class="search-results-main">
+
+				<table>
+					
+					
+
+					<tr>
+
+							@if(!empty($users))
+
+								<td>
+
+									<span>users</span> <br />
+
+									@foreach($users as $user)
+
+									{{ link_to("users/$user->username", $user->username, array('class'=>'list-item'))  }}<br />
+
+									@endforeach
 
 
-				
+								</td>
 
+							@endif
 
+							@if(!empty($quizzes))
 
+						<td>
+						
+							<span>quizzes</span> <br />
+
+							@foreach($quizzes as $quiz)
+
+							{{ link_to("browse/quizzes/$quiz->id", $quiz->title, array('class'=>'list-item')) }}<br />
+
+							@endforeach
+
+						</td>
+
+							@endif
+
+							@if(!empty($tags))
+
+						<td>
+						
+							<span>tags</span> <br />
+
+							@foreach($tags as $tag)
+
+							{{ link_to("browse/quizzes/tags/$tag->name", $tag->name, array('class'=>'list-item')) }}<br />
+
+							@endforeach
+
+						</td>
+
+							@endif
+
+					</tr>
+
+				</table>
 
 			
 			</div>

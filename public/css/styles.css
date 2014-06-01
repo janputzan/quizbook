@@ -1195,3 +1195,24 @@ background-color: #E7E7E7;
 position: relative;
 	left: 30px;
 }
+
+.search-results-main td
+{
+	width: 200px;
+	text-align: center;
+	vertical-align: text-top;
+}
+.search-results-main span
+{
+	font-size: large;
+	
+}
+
+.search-results-main
+{
+	position: relative;
+	left: -100px;
+
+	top: 130px;
+	width:600px;
+}
