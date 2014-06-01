@@ -57,7 +57,9 @@ class BrowseController extends BaseController {
 	public function showQuiz($id)
 	{
 
-		$quiz = Quiz::find($id)->first();
+		$quiz = Quiz::whereId($id)->first();
+
+		//dd($quiz->id);
 
 		$categories = Category::all();
 
@@ -202,13 +204,17 @@ class BrowseController extends BaseController {
 	public function byTags($name)
 	{
 
-		$tag = Tag::where('name', $name)->first();
+		$tag = Tag::whereName($name)->first();
 
 		//$posts = Post::has('comments')->get();
 
-		$quizzes = Quiz::has('tag')->get();
+		//$quiz = Quiz::all()->first();
 
-		
+		$quizzes = $tag->quiz()->get();
+
+		//$quizzes = Quiz::has('tag')->get();
+
+		//dd($quizzes->count());
 
 		if(Auth::check())
 		{
