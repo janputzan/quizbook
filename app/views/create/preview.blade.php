@@ -41,31 +41,55 @@
 				
 		<div>
 			
-			<?php $cont = Session::get('questions'); ?> 
+			<?php 
+				$cont = Session::get('questions');
+
+				$tick = '<span id="checkmark">
+							<div id="circle"></div>
+							<div id="stem"></div>
+							<div id="kick"></div>
+						</span>';
+
+
+			 ?> 
 
 				
 			<table class='questions-list'>
 
 			<tr>
 
-				@for ($i = 0; $i < 5; $i++)
+				@for ($i = 0; $i < ceil(count($cont) / 2) ; $i++)
 				
 				<td>
 					
 
-					<br /><span class='green'>question {{ ($i+1).":</span><br />".$cont[$i]['question'] }} <br />
+					<br /><span class='green'>question 
+
+					@if (strlen($cont[$i]['question']) > 15)
+
+							{{ ($i+1).":</span><br />".substr($cont[$i]['question'], 0, 15) }}... 
+
+						@else
+
+							{{ ($i+1).":</span><br />".$cont[$i]['question'] }}
+
+					@endif
+						
+
+
+					<br />
 
 					<span class='green'>answers: </span><br />
 
-					1. {{ $cont[$i]['answer1'] }} <br />
+					1. {{ (strlen($cont[$i]['answer1']) >15) ?  substr($cont[$i]['answer1'] , 0, 12)."..." : $cont[$i]['answer1'] }} {{ ( $cont[$i]['rightAnswer'] == 1) ? $tick : ''}} <br />
 
-					2. {{ $cont[$i]['answer2'] }} <br />
+					2. {{ (strlen($cont[$i]['answer2']) >15) ?  substr($cont[$i]['answer2'] , 0, 12)."..." : $cont[$i]['answer2'] }} {{ ( $cont[$i]['rightAnswer'] == 2) ? $tick : ''}}<br />
 
-					3. {{ $cont[$i]['answer3'] }} <br />
+					3. {{ (strlen($cont[$i]['answer3']) >15) ?  substr($cont[$i]['answer3'] , 0, 12)."..." : $cont[$i]['answer3'] }} {{ ( $cont[$i]['rightAnswer'] == 3) ? $tick : ''}}<br />
 
-					4. {{ $cont[$i]['answer4'] }} <br />
+					4. {{ (strlen($cont[$i]['answer4']) >15) ?  substr($cont[$i]['answer4'] , 0, 12)."..." : $cont[$i]['answer4'] }} {{ ( $cont[$i]['rightAnswer'] == 4) ? $tick : ''}}<br />
 
-					<span class='green'>right answer: </span>{{ $cont[$i]['rightAnswer'] }} <br />
+					
 
 				</td>
 
@@ -75,7 +99,7 @@
 
 			<tr>
 
-				@for ($i = 5; $i < sizeof($cont); $i++)
+				@for ($i = ceil(count($cont) / 2); $i < count($cont); $i++)
 				
 				<td>
 					
@@ -84,15 +108,15 @@
 
 					<span class='green'>answers: </span><br />
 
-					1. {{ $cont[$i]['answer1'] }} <br />
+					1. {{ (strlen($cont[$i]['answer1']) >15) ?  substr($cont[$i]['answer1'] , 0, 12)."..." : $cont[$i]['answer1'] }} {{ ( $cont[$i]['rightAnswer'] == 1) ? $tick : ''}} <br />
 
-					2. {{ $cont[$i]['answer2'] }} <br />
+					2. {{ (strlen($cont[$i]['answer2']) >15) ?  substr($cont[$i]['answer2'] , 0, 12)."..." : $cont[$i]['answer2'] }} {{ ( $cont[$i]['rightAnswer'] == 2) ? $tick : ''}}<br />
 
-					3. {{ $cont[$i]['answer3'] }} <br />
+					3. {{ (strlen($cont[$i]['answer3']) >15) ?  substr($cont[$i]['answer3'] , 0, 12)."..." : $cont[$i]['answer3'] }} {{ ( $cont[$i]['rightAnswer'] == 3) ? $tick : ''}}<br />
 
-					4. {{ $cont[$i]['answer4'] }} <br />
+					4. {{ (strlen($cont[$i]['answer4']) >15) ?  substr($cont[$i]['answer4'] , 0, 12)."..." : $cont[$i]['answer4'] }} {{ ( $cont[$i]['rightAnswer'] == 4) ? $tick : ''}}<br />
 
-					<span class='green'>right answer: </span>{{ $cont[$i]['rightAnswer'] }} <br />
+					
 
 				</td>
 
