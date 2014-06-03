@@ -188,13 +188,11 @@ class UserController extends \BaseController {
 			return Redirect::back()-> withErrors(array('notification' => 'Your password has changed..'))->with('class', '1');
 
 		}
-
-
-			
-
 		
 		else
 			return Redirect::back()-> withErrors(array('notification' => 'It is not your password..'));
+
+
 
 		return Redirect::back() -> withErrors(array('notification' => 'You need to be logged in..'));
 

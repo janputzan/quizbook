@@ -106,3 +106,9 @@ Route::post('browse/quizzes/{id}', 'TakeQuizController@takeQuiz');
 Route::get('browse/tags', 'BrowseController@showTags');
 
 Route::post('browse/tags', 'SearchController@searchTags');
+
+Route::get('take/quiz', 'TakeQuizController@take');
+
+Route::post('take/quiz', 'TakeQuizController@play');
+
+Route::get('take/score', 'TakeQuizController@score');

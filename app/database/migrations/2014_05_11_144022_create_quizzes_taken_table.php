@@ -24,7 +24,7 @@ class CreateQuizzesTakenTable extends Migration {
 
 			$table -> integer('time');
 
-			$table -> dateTime('date_taken');
+			$table -> timestamps();	
 
 		});
 	}
