@@ -16,7 +16,11 @@
 
 			<div class="social">
 
-				<a id="myLink" title="Click to log in to fb" href="social/auth" ><img src="images/facebook_458x85.png" class="social-img" /></a>
+			<!-- disable facebook for the server copy -->
+
+				<a id="myLink" title="Click to log in to fb" href="#" ><img src="images/facebook_458x85.png" class="social-img" /></a>
+
+				<!-- ******************* -->
 
 				<img src="images/google_458x85.png" class="social-img" />
 
