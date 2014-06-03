@@ -86,16 +86,21 @@ class BrowseController extends BaseController {
 		
 		//get the highest score for the quiz
 
-		$bestScore = $quiz->taken()->orderBy('score', 'DESC')->first();
+		$bestTake = $quiz->taken()->orderBy('score', 'DESC')->first();
+
+		
 
 
 		//if quiz hasn't been taken yet set bestScore to 0
 
-		if (is_null($bestScore))
+		if (is_null($bestTake))
 
 			$bestScore = 0;
 
+		else
+			$bestScore = $bestTake->score;
 
+		
 
 		if(Auth::check())
 		{

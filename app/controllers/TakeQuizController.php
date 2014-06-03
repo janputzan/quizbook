@@ -186,7 +186,7 @@ class TakeQuizController extends BaseController {
 				return View::make('take.score')-> with('currentUser', $currentUser)->with('timeTaken', $timeTaken)->with('score', $score);
 			}
 
-			return View::make('take.score')->with('taken', $taken)->with('score', $score);
+			return View::make('take.score')->with('timeTaken', $timeTaken)->with('score', $score);
 
 
 

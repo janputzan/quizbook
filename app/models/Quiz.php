@@ -27,7 +27,7 @@ class Quiz extends Eloquent {
 
     public function taken()
     {
-        return $this->belongsToMany('User', 'quizzes_taken', 'quiz_id', 'user_id');
+        return $this->hasMany('Taken');
     }
 
 
