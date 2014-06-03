@@ -67,7 +67,17 @@
 
 			@foreach($quizzesTaken as $quiz)
 
-				{{ link_to("browse/quizzes/$quiz->id", $quiz->title, array('class'=>'red')) }} <br />
+
+<!-- fix for taken quizzes title not displaying properly -->
+
+
+				<?php $taken = Quiz::whereId($quiz->quiz_id)->get(); $title = $taken[0]['title']; ?>
+
+
+<!-- 		 -->
+
+
+				{{ link_to("browse/quizzes/$quiz->quiz_id", "$title", array('class'=>'red')) }} <br />
 
 			@endforeach
 

@@ -83,9 +83,13 @@ class UserController extends \BaseController {
 	public function show($username)
 	{
 		
-		$user = User::where('username', '=', $username)->first();
+		$user = User::where('username', '=', $username)->with('quizzesTaken')->first();
 
-		$quizzesTaken = $user->quizzesTaken()->get();
+		//dd();
+
+		// $quiz = Quiz::whereId($id)->with('question.answer')->first();
+
+		$quizzesTaken = $user->quizzesTaken;
 
 		$quizzesCreated = $user->quizzes()->get();
 
