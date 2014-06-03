@@ -26,7 +26,7 @@ $cont = Session::get('questions');
 
 		<span class='title green'>
 
-			Edit Questions
+			edit questions
 
 		</span>
 
@@ -76,7 +76,7 @@ $cont = Session::get('questions');
 
 		<div class="create-form">
 
-			<span class="create-title">Question {{ $id+1 }} </span>
+			<span class="create-title">question {{ $id+1 }} </span>
 
 			{{ Form::open() }}
 
@@ -90,7 +90,7 @@ $cont = Session::get('questions');
 
 			<div class="answers">
 
-				<span class="create-title">Answers:</span>
+				<span class="create-title">answers:</span>
 				{{ $errors->first('rightAnswer', '<div class="error radio-btn">:message</div>') }}
 
 				<div class="create-field">
@@ -100,7 +100,7 @@ $cont = Session::get('questions');
 					{{ $errors->first('answer-1', '<div class=error>:message</div>') }}
 
 					<input type="radio" name="rightAnswer" value="1" id="1">
-					<label class='hidden' for='1'> Right Answer </label>
+					<label class='hidden' for='1'> right answer </label>
 					
 
 				</div>
@@ -112,7 +112,7 @@ $cont = Session::get('questions');
 					{{ $errors->first('answer-2', '<div class=error>:message</div>') }}
 
 					<input type="radio" name="rightAnswer" value="2" id="2">
-					<label class='hidden' for='2'> Right Answer </label>
+					<label class='hidden' for='2'> right answer </label>
 
 					
 
@@ -125,7 +125,7 @@ $cont = Session::get('questions');
 					{{ $errors->first('answer-3', '<div class=error>:message</div>') }}
 
 					<input type="radio" name="rightAnswer" value="3" id="3">
-					<label class='hidden' for='3'> Right Answer </label>
+					<label class='hidden' for='3'> right answer </label>
 					
 
 				</div>
@@ -137,7 +137,7 @@ $cont = Session::get('questions');
 					{{ $errors->first('answer-4', '<div class=error>:message</div>') }}
 
 					<input type="radio" name="rightAnswer" value="4" id="4">
-					<label class='hidden' for='4'> Right Answer </label>
+					<label class='hidden' for='4'> right answer </label>
 					
 
 				</div>
@@ -150,7 +150,7 @@ $cont = Session::get('questions');
 				
 				<span class='back-btn'>
 
-					<input type="submit" name="cancel" value="Cancel">
+					<input type="submit" name="cancel" value="cancel">
 
 				</span>
 
@@ -158,7 +158,7 @@ $cont = Session::get('questions');
 
 					
 
-						<input type="submit" name="save" value="Save">
+						<input type="submit" name="save" value="save">
 
 
 				</span>

@@ -6,7 +6,7 @@
 
 		<span class='title green'>
 
-			Preview
+			preview
 
 		</span>
 
@@ -145,7 +145,7 @@
 
 				<div class='back-btn'>
 
-					<input type="submit" name="back" value="Back">
+					<input type="submit" name="back" value="back">
 
 				</div>
 
@@ -153,7 +153,7 @@
 
 					
 
-						<input type="submit" name="finish" value="Create Quiz">
+						<input type="submit" name="finish" value="create quiz">
 
 					
 

@@ -6,13 +6,13 @@
 		
 		<span class="title">
 		
-			Register <br />
+			register <br />
 
 		</span>
 
 		<span class="sub-title">
 
-			Please fill out the fields below to register with quizbook. All fields are required.
+			please fill out the fields below to register with quizbook. all fields are required.
 
 		</span>
 
@@ -25,7 +25,7 @@
 
 		<div class="form-field">
 
-			{{ Form::label('username', 'Username: ') }}
+			{{ Form::label('username', 'username: ') }}
 
 			{{ Form::input('text', 'username') }}
 
@@ -35,7 +35,7 @@
 
 		<div class="form-field">
 
-			{{ Form::label('email', 'Email: ') }}
+			{{ Form::label('email', 'email: ') }}
 
 			{{ Form::input('text', 'email') }}
 
@@ -45,7 +45,7 @@
 
 		<div class="form-field">
 
-			{{ Form::label('password', 'Password: ') }}
+			{{ Form::label('password', 'password: ') }}
 
 			{{ Form::input('password', 'password') }}
 
@@ -55,7 +55,7 @@
 
 		<div class="form-field">
 
-			{{ Form::label('confirm-password', 'Confirm Password: ') }}
+			{{ Form::label('confirm-password', 'confirm password: ') }}
 
 			{{ Form::input('password', 'confirm-password') }}
 
@@ -79,7 +79,7 @@
 
 			<span class="link-to-terms">
 
-				I accept quizbook.io <a href="terms-conditions">Terms and Conditions</a>.
+				I accept quizbook.io <a href="terms-conditions">terms and conditions</a>.
 
 			</span>
 
@@ -89,7 +89,7 @@
 
 			<span class="submit-btn">
 
-				{{ Form::submit('Register with quizbook') }}
+				{{ Form::submit('register with quizbook') }}
 
 			</span>
 

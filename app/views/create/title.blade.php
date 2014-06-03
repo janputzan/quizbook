@@ -6,7 +6,7 @@
 
 		<span class='title green'>
 
-			Title
+			title
 
 		</span>
 
@@ -38,7 +38,7 @@
 
 				<div class="create-btn">
 
-					{{ Form::submit('Next') }}
+					{{ Form::submit('next') }}
 
 				</div>
 

@@ -8,7 +8,7 @@
 
 			<span class='title'>404</span> <br />
 
-			<span class='sub-title'>The page has magically disapeared..</span>
+			<span class='sub-title'>the page has magically disapeared..</span>
 
 		</div>
 	

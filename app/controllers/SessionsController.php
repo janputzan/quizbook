@@ -8,7 +8,7 @@ class SessionsController extends BaseController {
 		
 		if (Auth::check())
 
-			return View::make('welcome')-> withErrors(array('notification' => 'You are already logged in..'));
+			return View::make('welcome')-> withErrors(array('notification' => 'you are already logged in..'));
 
 		return View::make('users.login');
 	}
@@ -28,12 +28,12 @@ class SessionsController extends BaseController {
 		if (Auth::attempt(Input::only('username', 'password')))
 		{
 
-			return Redirect::to('/')-> withErrors(array('notification' => 'You are logged in..'));
+			return Redirect::to('/')-> withErrors(array('notification' => 'you are logged in..'));
 
 		}
 		else
 
-		return Redirect::back() -> withErrors(array('password' => 'Invalid Password'))->withInput(Input::except('password'));
+		return Redirect::back() -> withErrors(array('password' => 'invalid password'))->withInput(Input::except('password'));
 
 	}
 
@@ -48,7 +48,7 @@ class SessionsController extends BaseController {
 
 		$socialAuth->logoutAllProviders();
 
-		return Redirect::route('sessions.create') -> withErrors(array('notification' => 'You have logged out..'));
+		return Redirect::route('sessions.create') -> withErrors(array('notification' => 'you have logged out..'));
 
 	}
 

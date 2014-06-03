@@ -158,14 +158,14 @@ class QuizController extends \BaseController {
 				Session::forget('questions');
 
 
-				return Redirect::to('/')-> withErrors(array('notification' => 'Quiz created..'));
+				return Redirect::to('/')-> withErrors(array('notification' => 'quiz created..'));
 				
 
 				
 			}
 		}
 
-		return Redirect::to('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+		return Redirect::to('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));
 	}
 
 	/**

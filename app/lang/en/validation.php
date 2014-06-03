@@ -85,28 +85,28 @@ return array(
 
 	'custom' => array(
 		'username' => array(
-			'unique' => Input::get('username').'?? This one is already taken! Have you tried '.Input::get('username').$number.'?'),
+			'unique' => Input::get('username').'?? this one is already taken! have you tried '.Input::get('username').$number.'?'),
 		'email' => array(
-        'required' => 'We need to know your e-mail address!',
-        'email' => 'That is some strange email!',
-        'unique' => 'Someone has already signed up with your email address!'),
+        'required' => 'we need to know your e-mail address!',
+        'email' => 'that is some strange email!',
+        'unique' => 'someone has already signed up with your email address!'),
         'confirm-password' => array(
-        	'required' => 'Confirm your password!',
-        	'same' => 'Are you sure it is the same password?'),
+        	'required' => 'confirm your password!',
+        	'same' => 'are you sure it is the same password?'),
         'terms-conditions' => array(
-        	'required' => 'Remember about me, too!'),
+        	'required' => 'remember about me, too!'),
         'rightAnswer'	=> array(
-        	'required'	=> 'Choose the right answer!'),
+        	'required'	=> 'choose the right answer!'),
         'answer-1'	=> array(
-        	'required'	=> 'Provide an answer!'),
+        	'required'	=> 'provide an answer!'),
         'answer-2'	=> array(
-        	'required'	=> 'Provide an answer!'),
+        	'required'	=> 'provide an answer!'),
         'answer-3'	=> array(
-        	'required'	=> 'Provide an answer!'),
+        	'required'	=> 'provide an answer!'),
         'answer-4'	=> array(
-        	'required'	=> 'Provide an answer!'),
+        	'required'	=> 'provide an answer!'),
         'question'	=> array(
-        	'required'	=> 'What is the question?'),
+        	'required'	=> 'what is the question?'),
 
 		),
 

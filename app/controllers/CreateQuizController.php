@@ -13,7 +13,7 @@ class CreateQuizController extends BaseController {
 			return View::make('create.title') -> with('currentUser', $currentUser) -> with('class','1');
 		}
 
-		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+		return View::make('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));
 
 	}
 
@@ -41,7 +41,7 @@ class CreateQuizController extends BaseController {
 			return Redirect::to('create/category');
 		}
 
-		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+		return View::make('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));
 
 
 	}
@@ -58,7 +58,7 @@ class CreateQuizController extends BaseController {
 			return View::make('create.category') -> with('currentUser', $currentUser) -> with('class','2') ->with('categories' , $categories);
 		}
 
-		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+		return View::make('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));
 
 	}
 
@@ -88,7 +88,7 @@ class CreateQuizController extends BaseController {
 			return Redirect::to('create/add-questions');
 		}
 
-		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+		return View::make('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));
 
 
 
@@ -105,7 +105,7 @@ class CreateQuizController extends BaseController {
 			return View::make('create.addQuestions') -> with('currentUser', $currentUser) -> with('class','3');
 		}
 
-		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+		return View::make('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));
 
 	}
 
@@ -126,7 +126,7 @@ class CreateQuizController extends BaseController {
 				if (sizeof(Session::get('questions'))<6)
 				{
 
-					return Redirect::to('create/add-questions') -> withErrors(array('notification' => 'At least 6 questions!'));
+					return Redirect::to('create/add-questions') -> withErrors(array('notification' => 'at least 6 questions!'));
 				}
 
 				
@@ -170,7 +170,7 @@ class CreateQuizController extends BaseController {
 			return Redirect::to('create/add-tags');
 		}
 
-		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+		return View::make('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));
 
 
 
@@ -186,7 +186,7 @@ class CreateQuizController extends BaseController {
 			return View::make('create.addTags') -> with('currentUser', $currentUser) -> with('class','4');
 		}
 
-		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+		return View::make('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));
 
 
 	}
@@ -220,7 +220,7 @@ class CreateQuizController extends BaseController {
 			return Redirect::to('create/preview');
 		}
 
-		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+		return View::make('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));
 
 
 
@@ -236,7 +236,7 @@ class CreateQuizController extends BaseController {
 			return View::make('create.preview') -> with('currentUser', $currentUser) -> with('class','5');
 		}
 
-		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+		return View::make('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));
 
 
 	}
@@ -251,7 +251,7 @@ class CreateQuizController extends BaseController {
 			return View::make('create.share') -> with('currentUser', $currentUser) -> with('class','6');
 		}
 
-		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+		return View::make('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));
 
 	}
 
@@ -264,7 +264,7 @@ class CreateQuizController extends BaseController {
 			return View::make('create.editQuestions') -> with('currentUser', $currentUser) -> with('class','3') -> with('id',$id);
 		}
 
-		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+		return View::make('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));
 
 	}
 
@@ -318,7 +318,7 @@ class CreateQuizController extends BaseController {
 			//
 		}
 
-		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+		return View::make('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));
 
 
 	}
@@ -349,7 +349,7 @@ class CreateQuizController extends BaseController {
 			return Redirect::to('create/add-questions');
 		}
 		
-		return View::make('users.login') -> withErrors(array('notification' => 'You need to be logged in..'));
+		return View::make('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));
 
 	}
 

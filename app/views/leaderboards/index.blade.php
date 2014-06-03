@@ -29,9 +29,9 @@
 			
 		<table>
 			<tr>
-				<th class='right'>Username</th>
+				<th class='right'>username</th>
 
-				<th class='left'>Score</th>
+				<th class='left'>score</th>
 
 			</tr>
 

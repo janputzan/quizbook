@@ -38,19 +38,19 @@
 
 					<span class="menu-item"> 
 
-						{{ link_to('create/title', 'Create', array('class'=>'link_menu')) }}
+						{{ link_to('create/title', 'create', array('class'=>'link_menu')) }}
 
 					</span>
 
 					<span class="menu-item">
 
-						{{ link_to('browse', 'Browse', array('class'=>'link_menu')) }}
+						{{ link_to('browse', 'browse', array('class'=>'link_menu')) }}
 
 					</span>
 
 					<span class="menu-item">
 
-						{{ link_to('leaderboards', 'Leaderboards', array('class'=>'link_menu')) }}
+						{{ link_to('leaderboards', 'leaderboards', array('class'=>'link_menu')) }}
 
 					</span>
 
@@ -68,7 +68,7 @@
 
 						<span class="signup">
 
-							{{ link_to('register','Sign Up', array('class'=>'link_menu')) }}
+							{{ link_to('register','sign up', array('class'=>'link_menu')) }}
 
 						</span>
 
@@ -103,7 +103,7 @@
 
 					<span class="login">
 
-						{{ link_to('login','Log In', array('class'=>'link_menu')) }}
+						{{ link_to('login','log in', array('class'=>'link_menu')) }}
 
 					</span>
 
@@ -111,7 +111,7 @@
 
 					<span class="login">
 
-						{{ link_to('logout','Log Out', array('class'=>'link_menu')) }}
+						{{ link_to('logout','log out', array('class'=>'link_menu')) }}
 
 					</span>
 

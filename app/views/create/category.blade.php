@@ -6,7 +6,7 @@
 
 		<span class='title green'>
 
-			Category
+			category
 
 		</span>
 
@@ -38,7 +38,7 @@
 
 					<span class='back-btn'>
 
-						<input type="submit" name="back" value="Back">
+						<input type="submit" name="back" value="back">
 
 					</span>
 
@@ -46,7 +46,7 @@
 
 					<span class="next-btn">
 
-						{{ Form::submit('Next') }}
+						{{ Form::submit('next') }}
 
 					</span>
 

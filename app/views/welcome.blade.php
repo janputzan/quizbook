@@ -34,13 +34,13 @@
 
 		<ul class="wrapper">
 
-			<a href="create/title"><li class="box"><img src="../images/create_100.png" class="tile-icons" /><span class="text-content">Create</span></li></a>
+			<a href="create/title"><li class="box"><img src="../images/create_100.png" class="tile-icons" /><span class="text-content">create</span></li></a>
 
-			<a href="browse"><li class="box"><img src="../images/take_100.png" class="tile-icons" /><span class="text-content">Browse</span></li></a>
+			<a href="browse"><li class="box"><img src="../images/take_100.png" class="tile-icons" /><span class="text-content">browse</span></li></a>
 
-			<a href="leaderboards"><li class="box"><img src="../images/leaderboards_100.png" class="tile-icons" /><span class="text-content">Leaderboards</span></li></a>
+			<a href="leaderboards"><li class="box"><img src="../images/leaderboards_100.png" class="tile-icons" /><span class="text-content">leaderboards</span></li></a>
 
-			<a href="search"><li class="box"><img src="../images/search_100.png" class="tile-icons" /><span class="text-content">Search</span></li></a>
+			<a href="search"><li class="box"><img src="../images/search_100.png" class="tile-icons" /><span class="text-content">search</span></li></a>
 
 		</ul>
 

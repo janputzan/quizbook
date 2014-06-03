@@ -8,7 +8,7 @@
 
 		<span class='title'>
 
-					Search
+					search
 
 				</span>
 
@@ -16,7 +16,7 @@
 
 				<span class='sub-title'>
 
-					Please enter a search query below
+					please enter a search query below
 
 				</span>
 
@@ -46,7 +46,7 @@
 
 						<span class="check-box">
 
-							{{ Form::label('users', 'Users') }}
+							{{ Form::label('users', 'users') }}
 
 							{{ Form::checkbox('users', 'yes') }}
 
@@ -54,7 +54,7 @@
 
 						<span class="check-box">
 
-							{{ Form::label('quizzes', 'Quizzes') }}
+							{{ Form::label('quizzes', 'quizzes') }}
 
 							{{ Form::checkbox('quizzes', 'yes') }}
 
@@ -62,7 +62,7 @@
 
 						<span class="check-box">
 
-							{{ Form::label('tags', 'Tags') }}
+							{{ Form::label('tags', 'tags') }}
 
 							{{ Form::checkbox('tags', 'yes') }}
 
@@ -74,7 +74,7 @@
 
 						<span class="search-btn">
 
-							{{ Form::submit('Search quizbook') }}
+							{{ Form::submit('search quizbook') }}
 
 						</span>
 

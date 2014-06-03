@@ -6,13 +6,13 @@
 		
 		<span class="title">
 		
-			Log In <br />
+			log in <br />
 
 		</span>
 
 		<span class="sub-title">
 
-			Please fill out the fields below to log in to quizbook. All fields are required.
+			please fill out the fields below to log in to quizbook. all fields are required.
 
 		</span>
 
@@ -25,7 +25,7 @@
 
 		<div class="form-field">
 
-			{{ Form::label('username', 'Username: ') }}
+			{{ Form::label('username', 'username: ') }}
 
 			{{ Form::input('text', 'username') }}
 
@@ -35,7 +35,7 @@
 
 		<div class="form-field">
 
-			{{ Form::label('password', 'Password: ') }}
+			{{ Form::label('password', 'password: ') }}
 
 			{{ Form::input('password', 'password') }}
 
@@ -55,7 +55,7 @@
 
 			<span class="remember-me">
 
-				Keep me logged in
+				keep me logged in
 
 			</span>
 
@@ -65,7 +65,7 @@
 
 			<span class="submit-btn">
 
-				{{ Form::submit('Log in to quizbook') }}
+				{{ Form::submit('log in to quizbook') }}
 
 			</span>
 

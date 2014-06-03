@@ -36,7 +36,7 @@ class UserController extends \BaseController {
 		
 		if (Auth::check())
 
-			return View::make('welcome')-> withErrors(array('notification' => 'You are already logged in..'));
+			return View::make('welcome')-> withErrors(array('notification' => 'you are already logged in..'));
 
 		return View::make('users.create');
 	}
@@ -69,7 +69,7 @@ class UserController extends \BaseController {
 			$user->save();
 
 
-		return Redirect::route('sessions.create')-> withErrors(array('notification' => 'You can now log in..'));
+		return Redirect::route('sessions.create')-> withErrors(array('notification' => 'you can now log in..'));
 
 
 	}
@@ -135,7 +135,7 @@ class UserController extends \BaseController {
 
 			if ($username != $currentUser->username)
 
-				return View::make('users.show')->with( 'user', $user)->with('currentUser', $currentUser)-> withErrors(array('notification' => 'Not your account..'));
+				return View::make('users.show')->with( 'user', $user)->with('currentUser', $currentUser)-> withErrors(array('notification' => 'not your account..'));
 
 			
 
@@ -145,7 +145,7 @@ class UserController extends \BaseController {
 
 		}
 
-		return Redirect::route('sessions.create')->withErrors(array('notification' => 'You need to be logged in..'));	
+		return Redirect::route('sessions.create')->withErrors(array('notification' => 'you need to be logged in..'));	
 	}
 
 	/**
@@ -189,16 +189,16 @@ class UserController extends \BaseController {
 
 			$user->save();
 
-			return Redirect::back()-> withErrors(array('notification' => 'Your password has changed..'))->with('class', '1');
+			return Redirect::back()-> withErrors(array('notification' => 'your password has changed..'))->with('class', '1');
 
 		}
 		
 		else
-			return Redirect::back()-> withErrors(array('notification' => 'It is not your password..'));
+			return Redirect::back()-> withErrors(array('notification' => 'it is not your password..'));
 
 
 
-		return Redirect::back() -> withErrors(array('notification' => 'You need to be logged in..'));
+		return Redirect::back() -> withErrors(array('notification' => 'you need to be logged in..'));
 
 
 	}

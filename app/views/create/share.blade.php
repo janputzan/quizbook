@@ -23,30 +23,15 @@
 	<div class="content-share">
 
 
-	You have been awarded {{ $points }} for creating the quiz. Share it now.
+	you have been awarded {{ $points }} for creating the quiz. share it now.
 
 
 	<div class="create-btn">
 
 				
 
-				<span class='back-btn'>
-
-					<input type="submit" name="back" value="Back">
-
-				</span>
-
-				<span class="next-btn">
-
-					
-
-						<input type="submit" name="finish" value="Create Quiz">
-
-					
-
-				</span>
-
-			</div>
+				
+	</div>
 
 
 

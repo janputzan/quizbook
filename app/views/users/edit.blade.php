@@ -17,7 +17,7 @@
 
 				<span class='sub-title'>
 
-					You can change your password here:
+					you can change your password here:
 
 				</span>
 
@@ -39,7 +39,7 @@
 
 				<div class="form-field">
 
-					{{ Form::label('current-password', 'Current Password: ') }}
+					{{ Form::label('current-password', 'current password: ') }}
 
 					{{ Form::input('password', 'current-password') }}
 
@@ -49,7 +49,7 @@
 
 				<div class="form-field">
 
-					{{ Form::label('new-password', 'New Password: ') }}
+					{{ Form::label('new-password', 'new password: ') }}
 
 					{{ Form::input('password', 'new-password') }}
 
@@ -59,7 +59,7 @@
 
 				<div class="form-field">
 
-					{{ Form::label('confirm-new-password', 'Confirm New Password: ') }}
+					{{ Form::label('confirm-new-password', 'confirm new password: ') }}
 
 					{{ Form::input('password', 'confirm-new-password') }}
 
@@ -74,7 +74,7 @@
 
 						{{ Form::label('submit', '->') }}
 
-						{{ Form::submit('Change Password') }}
+						{{ Form::submit('change password') }}
 
 					</span>
 
