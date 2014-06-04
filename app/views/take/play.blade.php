@@ -15,6 +15,7 @@
     function validate() {
        
             document.getElementById("next").disabled = false;
+            document.getElementById("skip").disabled = true;
        
        }
 
@@ -115,7 +116,7 @@
 
 		<div class="content-header ">
 
-			<span class='title'>
+			<span class='title smaller'>
 
 			{{$question['question']}}
 
@@ -153,13 +154,15 @@
 
 		<div class="form-play">
 
-				<span class="play-btn">
-
-					<input type='submit' value='skip' />
-
-				</span>
-
 				@if (Session::get('numberQuestions')>1)
+
+
+					<span class="play-btn">
+
+						<input id='skip' type='submit' value='skip' name='skip' />
+
+					</span>
+
 
 					<span class="playNext-btn">
 
@@ -168,6 +171,12 @@
 					</span>
 
 					@else
+
+						<span class="play-btn">
+
+							<input id='skip' type='submit' value='skip' name='skip' disabled />
+
+						</span>
 
 						<span class="playNext-btn">
 

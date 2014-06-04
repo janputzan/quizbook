@@ -1198,7 +1198,7 @@ position: relative;
 
 .search-results-main td
 {
-	width: 200px;
+	width: 250px;
 	text-align: center;
 	vertical-align: text-top;
 }
@@ -1220,6 +1220,7 @@ position: relative;
 .quizzes-list td
 {
 	width: 250px;
+	vertical-align: text-top;
 	
 	
 }
@@ -1348,19 +1349,19 @@ position: relative;
 	border: solid 1px #414141;
 	color: #414141;
 }
+.play-btn input[type='submit']:disabled
+{
+	background-color: #F5F5F5;
+	border: solid 1px #414141;
+	color: #414141;
+}
 
 .bigger
 {
 	font-size: large;
 }
 
-.wordwrap { 
-   white-space: pre-wrap;      /* CSS3 */   
-   white-space: -moz-pre-wrap; /* Firefox */    
-   white-space: -pre-wrap;     /* Opera <7 */   
-   white-space: -o-pre-wrap;   /* Opera 7 */    
-   word-wrap: break-word;      /* IE */
-}
+
 .play
 {
 	position: relative;
@@ -1416,7 +1417,7 @@ position: relative;
 	position: relative;
 	top: 10px;
 	padding-left: 10px;
-	font-size: large;
+	font-size: normal;
 }
 
 .form-play
@@ -1425,4 +1426,8 @@ position: relative;
 	left: -150px;
 }
 
+.smaller
+{
+	font-size: x-large;
+}
 

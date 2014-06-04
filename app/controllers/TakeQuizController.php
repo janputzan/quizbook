@@ -115,6 +115,15 @@ class TakeQuizController extends BaseController {
 
 			}
 
+			if (Input::get('skip'))
+			{
+				Session::put('numberQuestions', --$number );
+
+				
+
+				$count++;
+			}
+
 			if (Input::get('finish'))
 			{
 				return Redirect::to('take/score');
@@ -157,21 +166,31 @@ class TakeQuizController extends BaseController {
 			{
 				$currentUser = Auth::user();
 
-				$taken = new Taken;
+				$isTaken = Taken::where('user_id', '=', $currentUser->id)->where('quiz_id', '=', Session::get('quiz')['id'], 'AND')->first();
 
-				$taken->score = $score;
+				$isUsers = Quiz::whereId(Session::get('quiz')['id'])->where('user_id', '=', $currentUser->id, 'AND')->first();
 
-				$taken->time = $timeTaken;
+				
 
-				$taken->user_id = $currentUser->id;
+				if (!$isTaken && !$isUsers)
+				{
 
-				$taken->quiz_id = Session::get('quiz')['id'];
+					$taken = new Taken;
 
-				$taken->save();
+					$taken->score = $score;
 
-				$currentUser->total_score += $score;
+					$taken->time = $timeTaken;
 
-				$currentUser->save();
+					$taken->user_id = $currentUser->id;
+
+					$taken->quiz_id = Session::get('quiz')['id'];
+
+					$taken->save();
+
+					$currentUser->total_score += $score;
+
+					$currentUser->save();
+				}
 
 				Session::forget('quiz');
 				Session::forget('score');
