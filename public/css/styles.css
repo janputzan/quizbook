@@ -316,7 +316,8 @@ img.logo-png
 	margin-left: auto;
     margin-right: auto;
 	padding-top: 45px;
-	left:258px;
+	left:307px;
+	bottom: 30px;
 }
 
 .social-img
@@ -1431,3 +1432,69 @@ position: relative;
 	font-size: x-large;
 }
 
+.shareFB
+{
+	display: block;
+	width: 300px;
+	height: 50px;
+	font-size: x-large;
+	background-color: #3B5998;
+	text-align: center;
+
+}
+.share-btn
+{
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	left: 307px;
+	top: 40px;
+}
+.shareFB span
+{
+	position: relative;
+	top: 5px;
+}
+.shareFB:hover
+{
+	background-color: #4C73C4;
+}
+
+.loginFB
+{
+	background-color: #414141;
+	border: none;
+	width: 265px;
+	height: 40px;
+	color: #F5F5F5;
+	position: relative;
+	top: 150px;
+}
+
+.share-message
+{
+	font-size: x-large;
+	position: relative;
+	left: -200px;
+	text-align: center;
+	top: -50px;
+}
+
+.share-cont
+{
+	position: relative;
+	left: 0px;
+	color: #414141;
+	top: 100px;
+}
+
+.big
+{
+	font-size: xx-large;
+}
+
+.share-cont .share-btn
+{
+	position: relative;
+	left: 150px;
+}

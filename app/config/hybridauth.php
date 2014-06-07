@@ -9,6 +9,7 @@ return array(
 		"Facebook"   => array (
 			"enabled"    => true,
 			"keys"       => array ( "id" => "1424238897840103", "secret" => "ac4654154727f6d8280e9cde4367dbc6" ),
+			"scope"		=> "publish_actions",
 			),
 		"Twitter"    => array (
 			"enabled"    => true,

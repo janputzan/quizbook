@@ -18,11 +18,11 @@
 
 			<!-- disable facebook for the server copy -->
 
-				<a id="myLink" title="Click to log in to fb" href="#" ><img src="images/facebook_458x85.png" class="social-img" /></a>
+				<a class='shareFB' id="myLink" title="Click to log in to fb" href="social/auth" ><span>log in with facebook</span></a>
 
 				<!-- ******************* -->
 
-				<img src="images/google_458x85.png" class="social-img" />
+				
 
 			</div>
 
@@ -44,11 +44,21 @@
 
 		</ul>
 
+		@if(Auth::check())
+
+		<div class='share-btn'>
+
+			<a class='shareFB' href="/share"><span>share us on facebook</span></a>
+
+		</div>
+
+		@endif
+
 	</div>
 
-	<div id="status">
+	
 
-	</div>
+	
 
 	
 

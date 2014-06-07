@@ -6,7 +6,7 @@
 
 		<span class='title green'>
 
-			Share
+			share to facebook
 
 		</span>
 
@@ -22,15 +22,14 @@
 
 	<div class="content-share">
 
+		<div class='share-message'>
+	you have been awarded <br /><span class='red'>{{ $points }}</span> <br />points for creating a quiz. <br />share it now.
 
-	you have been awarded {{ $points }} for creating the quiz. share it now.
+	</div>
+	<div class='share-btn'>
 
+			<a class='shareFB' href="/shareQuiz/{{$quiz->id}}"><span>share quiz to facebook</span></a>
 
-	<div class="create-btn">
-
-				
-
-				
 	</div>
 
 

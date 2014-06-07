@@ -152,6 +152,8 @@ class TakeQuizController extends BaseController {
 
 			//dd(Session::get('quiz')['id']);
 
+			$quiz = Quiz::whereId(Session::get('quiz')['id'])->first();
+
 			$time = new DateTime();
 
 			$date = date_create_from_format('d/m/Y H:i:s', $time->getTimestamp());
@@ -183,7 +185,7 @@ class TakeQuizController extends BaseController {
 
 					$taken->user_id = $currentUser->id;
 
-					$taken->quiz_id = Session::get('quiz')['id'];
+					$taken->quiz_id = $quiz->id;
 
 					$taken->save();
 
@@ -202,7 +204,7 @@ class TakeQuizController extends BaseController {
 
 
 
-				return View::make('take.score')-> with('currentUser', $currentUser)->with('timeTaken', $timeTaken)->with('score', $score);
+				return View::make('take.score')-> with('currentUser', $currentUser)->with('timeTaken', $timeTaken)->with('score', $score)->with('quiz', $quiz);
 			}
 
 			return View::make('take.score')->with('timeTaken', $timeTaken)->with('score', $score);

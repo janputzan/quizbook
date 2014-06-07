@@ -59,17 +59,24 @@
 	<div class='content'>
 
 
-		<div class='list'>
+		<div class='share-cont'>
 
-			
-
-		your score: {{ $score }}
-
-		time taken: {{ $timeTaken }}
-				
 					
+			<div class='share-message'>
 
-			
+			it took you <span class='red'>{{$timeTaken}}</span> seconds to score <br /><span class='red big'>{{ $score }}</span> <br />points. well done!
+
+			</div>
+
+
+				@if (Auth::check())
+			<div class='share-btn'>
+
+				<a class='shareFB' href="/shareQuiz/{{$quiz->id}}"><span>share quiz to facebook</span></a>
+				
+
+			</div>
+				@endif
 
 		</div>
 	

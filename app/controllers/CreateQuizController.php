@@ -248,7 +248,15 @@ class CreateQuizController extends BaseController {
 		{
 			$currentUser = Auth::user();
 
-			return View::make('create.share') -> with('currentUser', $currentUser) -> with('class','6');
+			$points = Session::get('score');
+
+			$quiz = Quiz::whereId(Session::get('quiz_id'))->first();
+
+			Session::forget('quiz_id');
+
+			Session::forget('score');
+
+			return View::make('create.share') -> with('currentUser', $currentUser) -> with('class','6')->with('points', $points)->with('quiz', $quiz);
 		}
 
 		return View::make('users.login') -> withErrors(array('notification' => 'you need to be logged in..'));

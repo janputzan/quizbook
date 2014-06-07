@@ -35,6 +35,8 @@ class QuizController extends \BaseController {
 			if (Input::get('back'))
 				return Redirect::to('create/add-tags');
 
+
+
 			if (Input::get('finish'))
 			{
 				$currentUser = Auth::user();
@@ -149,16 +151,21 @@ class QuizController extends \BaseController {
 
 				//adding 50 points for creating a quiz and 20 points for each question to the total score 
 
-				$currentUser->total_score += 50 + sizeof(Session::get('questions')) * 20;
+				$points = 50 + sizeof(Session::get('questions')) * 20;
+				$currentUser->total_score += $points;
 				$currentUser->save();
+
+				Session::put('score', $points);
+				Session::put('quiz_id', $quiz->id);
 
 				Session::forget('quiz-title');
 				Session::forget('category');
 				Session::forget('tags');
 				Session::forget('questions');
 
+				//dd($points);
 
-				return Redirect::to('/')-> withErrors(array('notification' => 'quiz created..'));
+				return Redirect::to('/create/share')-> withErrors(array('notification' => 'quiz created..'));
 				
 
 				

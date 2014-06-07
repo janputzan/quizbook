@@ -70,7 +70,7 @@ Route::post('create/preview', 'QuizController@store');
 
 Route::get('create/share', 'CreateQuizController@share');
 
-Route::post('create/share', 'QuizController@share');
+// Route::post('create/share', 'QuizController@share');
 
 Route::get('questions/edit/{id}', 'CreateQuizController@editQuestions');
 
@@ -112,3 +112,8 @@ Route::get('take/quiz', 'TakeQuizController@take');
 Route::post('take/quiz', 'TakeQuizController@play');
 
 Route::get('take/score', 'TakeQuizController@score');
+
+
+Route::get('share', 'HybridAuthController@share');
+
+Route::get('shareQuiz/{id}', 'HybridAuthController@shareQuiz');
