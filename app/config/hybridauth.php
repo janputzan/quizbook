@@ -1,6 +1,6 @@
 <?php
 return array(	
-	"base_url"   => "http://quizbook.eu/social/auth",
+	"base_url"   => "http://quizbook.eu/",
 	"providers"  => array (
 		"Google"     => array (
 			"enabled"    => true,
