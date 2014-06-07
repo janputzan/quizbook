@@ -106,6 +106,11 @@ class HybridAuthController extends BaseController {
 
 		$profile = $user->profiles;
 
+		if (empty($profile))
+		{
+			return  Redirect::to('/')-> withErrors(array('notification' => 'option unavailable..'));
+		}
+
 		$session = $profile->session;
 		
 		$hybridauth = new Hybrid_Auth(app_path() . '/config/hybridauth.php');
@@ -145,6 +150,11 @@ class HybridAuthController extends BaseController {
 		$user = User::whereId(Auth::user()->id)->with('profiles')->first();
 
 		$profile = $user->profiles;
+		
+		if (empty($profile))
+		{
+			return  Redirect::to('/')-> withErrors(array('notification' => 'option unavailable..'));
+		}
 
 		$session = $profile->session;
 		
