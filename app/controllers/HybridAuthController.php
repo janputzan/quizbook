@@ -123,7 +123,7 @@ class HybridAuthController extends BaseController {
 		$facebook->api()->api("/me/feed", "post", array(
 		  "message" => "Challenge your friends on Facebook. Create and share a quiz.",
 		  "picture" => "http://quizbook.eu/images/logo_mini_bg_150.png",
-		  "link"    => "http://www.quizbook.eu",
+		  "link"    => "http://quizbook.eu",
 		  "name"    => "quizbook.eu",
 		  "caption" => "Quiz your friends!"
 		));
