@@ -18,7 +18,7 @@
 
 			<!-- disable facebook for the server copy -->
 
-				<a class='shareFB' id="myLink" title="Click to log in to fb" href="social/auth" ><span>log in with facebook</span></a>
+				<a class='shareFB' href="social/facebook" ><span>log in with facebook</span></a>
 
 				<!-- ******************* -->
 
